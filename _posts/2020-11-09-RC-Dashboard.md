@@ -56,7 +56,7 @@ I don't know how many of these it is feasible to finish in about 12 weeks but I 
 
 - [ ] [MIT Distributed Systems](https://pdos.csail.mit.edu/6.824/) (6.824) (Lab 1 + Lab2A-C + Lab3A-B + Lab4A-B + project proposal + final project)
 
-    ✅ ✅ 🟨 🟨 🟨 🟨 ⬜ ⬜ ⬜ ⬜
+    ✅ ✅ ✅ 🟨 🟨 🟨 ⬜ ⬜ ⬜ ⬜
    
 - [ ] Cryptography ([Stanford course](https://crypto.stanford.edu/~dabo/courses/OnlineCrypto/), maybe also [Cryptopals](https://cryptopals.com/)) 
 
@@ -89,7 +89,7 @@ I don't know how many of these it is feasible to finish in about 12 weeks but I 
 
 - [ ] [Geometric Folding Algorithms](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-849-geometric-folding-algorithms-linkages-origami-polyhedra-fall-2012/) (5 x HW + 1 x project milestone + 1 x final project; course doesn't specify milestone but I'm including it analogously to the other ML courses here)
 
-    ✴️ 🟨 🟨 🟨 ⬜
+    ✅ 🟨 🟨 🟨 ⬜
     ⬜ ⬜ 
 
 - [ ] [edX Mastering Quantum Mechanics](https://courses.edx.org/courses/course-v1:MITx+8.05.1x+1T2018/course/) (15 x units)
@@ -171,12 +171,12 @@ I don't know how many of these it is feasible to finish in about 12 weeks but I 
 - [ ] Think of ~10 ideas that are beyond my present level of skills or knowledge i.e. where I have no idea what to do - and then try to come up with a plan to realise them 0️⃣ 3️⃣
 - [ ] Write >= 12 technical blogposts whose main purpose is to practise articulating technical ideas rather than to be amazing
    0️⃣ 2️⃣
-- [ ] [Read >=100 machine learning papers]({% post_url rc/ai/2021-01-12-101-Papers %}) (I get credit only when I have produced some output related to the paper) 0️⃣ 2️⃣ 3️⃣
+- [ ] [Read >=100 machine learning papers]({% post_url rc/ai/2021-01-12-101-Papers %}) (I get credit only when I have produced some output related to the paper) 0️⃣ 2️⃣ 4️⃣
     - [Papers for CS330: Supervised multi-task learning and transfer learning]({% post_url rc/cs330/2020-11-30-CS330-Week1 %}) (2)
     - [Papers for CS294: Autoregressive Models]({% post_url rc/cs294/2020-11-23-CS294-Week1 %}) (2)
     - [Notes on NeRFs]({% post_url rc/ai/2020-12-26-NeRF %}) (1)
     - [Weeks 1-4 at RC and ideas for week 5]({% post_url rc/log/2020-12-07-RC-Week-4 %}) (excluding the 3 also in the post below, 4)
-    - [101 Papers]({% post_url rc/ai/2021-01-12-101-Papers %})(14)
+    - [101 Papers]({% post_url rc/ai/2021-01-12-101-Papers %})(15)
 
 - [ ] Implement and train ~12 ML papers from scratch 0️⃣ 3️⃣ 
 - [ ] Implement and train the following Kaggle prize-winning models
