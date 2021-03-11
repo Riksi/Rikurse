@@ -6,6 +6,13 @@ categories: paper
 ---
 $$\newcommand{\evec}[1]{\mathbf{e}_{#1}}$$
 
+- Streamline: a line along which the velocity is constant:
+    $$\frac{dx}{v_x} = \frac{dy}{v_y} = \frac{dy}{v_y}$$
+
+- Stream function : a value that is constant along a streamline
+
+    $$\text{2D}: v_x = \frac{\partial phi}{\partial y}, v_y = -\frac{\partial phi}{\partial x}$$
+
 - Steady flow: $\frac{\partial v}{\partial t} = 0$
 
 - Inviscid flow: $\nabla \tau = \nabla\cdot(-p\mathbf{I}) = -\nabla$
