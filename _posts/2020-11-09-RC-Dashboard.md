@@ -56,7 +56,7 @@ I don't know how many of these it is feasible to finish in about 12 weeks but I 
 
 - [ ] [MIT Distributed Systems](https://pdos.csail.mit.edu/6.824/) (6.824) (Lab 1 + Lab2A-C + Lab3A-B + Lab4A-B + project proposal + final project)
 
-    ✅ ✅ ✅ 🟨 🟨 🟨 ⬜ ⬜ ⬜ ⬜
+    ✅ ✅ ✅ ✅ 🟨 🟨 ⬜ ⬜ ⬜ ⬜
    
 - [ ] Cryptography ([Stanford course](https://crypto.stanford.edu/~dabo/courses/OnlineCrypto/), maybe also [Cryptopals](https://cryptopals.com/)) 
 
