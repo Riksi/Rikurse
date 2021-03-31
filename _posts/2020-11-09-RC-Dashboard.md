@@ -92,9 +92,14 @@ I don't know how many of these it is feasible to finish in about 12 weeks but I 
     ✅ 🟨 🟨 🟨 ⬜
     ⬜ ⬜ 
 
+- [ ] [MIT Advanced Fluid Mechanics](https://ocw.mit.edu/courses/mechanical-engineering/2-25-advanced-fluid-mechanics-fall-2013/)(12 x units)
+    ✅ ✅ ✅ ✅ ✅ 
+    ✅ ✅ ⬜ ⬜ ⬜ 
+    ⬜ ⬜
+
 - [ ] [edX Mastering Quantum Mechanics](https://courses.edx.org/courses/course-v1:MITx+8.05.1x+1T2018/course/) (15 x units)
 
-    ✅ ✴️ 🟨 🟨 🟨
+    ✅ ✅ ✅ 🟨 🟨
     ⬜ ⬜ ⬜ ⬜ ⬜
     ⬜ ⬜ ⬜ ⬜ ⬜
 ## Other areas to cover through some means   
