@@ -10,7 +10,7 @@ categories: rc
 
 I don't know how many of these it is feasible to finish in about 12 weeks but I wish to do as much as possible.
 
-**Key:** &nbsp; ⬜ To Do &nbsp; ✴️  In Progress &nbsp; ✅ Done &nbsp; 🟨 Target is to finish by end of RC &nbsp; 🟢 Programming Parts Done &nbsp 🔵 A self-contained section complete
+**Key:** &nbsp; ⬜ To Do &nbsp; ✴️  In Progress &nbsp; ✅ Done &nbsp; 🟨 Target is to finish by end of RC &nbsp; 🟢 Programming Parts Done &nbsp; 🔵 A self-contained section complete
 
 ### Machine learning  
 - [ ] [Natural Language Processing with Deep Learning](http://web.stanford.edu/class/cs224n/) (Stanford CS224n) (5 x HW + 1 x project proposal + 1 x project milestone + 1 x final project)
