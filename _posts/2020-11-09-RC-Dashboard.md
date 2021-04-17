@@ -10,7 +10,7 @@ categories: rc
 
 I don't know how many of these it is feasible to finish in about 12 weeks but I wish to do as much as possible.
 
-**Key:** &nbsp; ⬜ To Do &nbsp; ✴️  In Progress &nbsp; ✅ Done &nbsp; 🟨 Target is to finish by end of RC; 🟢 Programming Parts Done
+**Key:** &nbsp; ⬜ To Do &nbsp; ✴️  In Progress &nbsp; ✅ Done &nbsp; 🟨 Target is to finish by end of RC &nbsp; 🟢 Programming Parts Done &nbsp 🔵 A self-contained section complete
 
 ### Machine learning  
 - [ ] [Natural Language Processing with Deep Learning](http://web.stanford.edu/class/cs224n/) (Stanford CS224n) (5 x HW + 1 x project proposal + 1 x project milestone + 1 x final project)
@@ -27,7 +27,7 @@ I don't know how many of these it is feasible to finish in about 12 weeks but I 
    
 - [ ] [Stanford Deep Multi-Task and Meta Learning](https://cs330.stanford.edu/) (4 x HW + 1 x project milestone + 1 x final project)
 
-    ✅ ✴️ 🟨 ⬜ ⬜ ⬜ 
+    ✅ 🔵 🟨 ⬜ ⬜ ⬜ 
   
 - [ ] [Full Stack Deep Learning](https://course.fullstackdeeplearning.com/)
 - [ ] [Probabilistic Graphical Models](https://www.coursera.org/specializations/probabilistic-graphical-models)
@@ -174,7 +174,7 @@ I don't know how many of these it is feasible to finish in about 12 weeks but I 
 
 ## Other goals
 - [ ] Think of ~10 ideas that are beyond my present level of skills or knowledge i.e. where I have no idea what to do - and then try to come up with a plan to realise them 0️⃣ 3️⃣
-- [ ] Write >= 12 technical blogposts whose main purpose is to practise articulating technical ideas rather than to be amazing
+- [ ] Write >= 12 technical blogposts <s>whose main purpose is to practise articulating technical ideas rather than to be amazing</s>
    0️⃣ 3️⃣
 - [ ] [Read >=100 machine learning papers]({% post_url rc/ai/2021-01-12-101-Papers %}) (I get credit only when I have produced some output related to the paper) 0️⃣ 2️⃣ 6️⃣
     - [Papers for CS330: Supervised multi-task learning and transfer learning]({% post_url rc/cs330/2020-11-30-CS330-Week1 %}) (2)
@@ -183,7 +183,7 @@ I don't know how many of these it is feasible to finish in about 12 weeks but I 
     - [Weeks 1-4 at RC and ideas for week 5]({% post_url rc/log/2020-12-07-RC-Week-4 %}) (excluding the 3 also in the post below, 4)
     - [101 Papers]({% post_url rc/ai/2021-01-12-101-Papers %})(17)
 
-- [ ] Implement and train ~12 ML papers from scratch 0️⃣ 3️⃣ 
+- [ ] Implement and train ~12 ML papers from scratch 0️⃣ 4️⃣ 
 - [ ] Implement and train the following Kaggle prize-winning models
   
     ✴️  [Lyft 3D Object Detection for Autonomous Vehicles](https://www.kaggle.com/c/3d-object-detection-for-autonomous-vehicles/discussion/133895)
