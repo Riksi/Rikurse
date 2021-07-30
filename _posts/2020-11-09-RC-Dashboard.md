@@ -45,7 +45,7 @@ I don't know how many of these it is feasible to finish in about 12 weeks but I 
 
     **UPDATE: going to focus on CS179 as the assignments are more challenging (no criticism of the Oxford course which has good lectures that I have found useful but it has been design as a crash course rather than a computer science course)**
     **Caltech CS179 (6 x labs + 1 x project proposal + 1 x project)**
-    ✅ 🟢 ✅ 🟨 ⬜ ⬜ ⬜ ⬜
+    ✅ ✅ ✅ 🟨 ⬜ ⬜ ⬜ ⬜
     
     **Oxford (12 x practicals)**
     ✅ ✅ ✴️ 🟨 🟨 🟨 ⬜ ⬜ ⬜ ⬜ ⬜
