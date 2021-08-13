@@ -162,7 +162,7 @@ I don't know how many of these it is feasible to finish in about 12 weeks but I 
 - [ ] Topics from [Stanford CS231A](http://web.stanford.edu/class/cs231a/) (covers some useful theoretical concepts)
 - [ ]  [Depth First Learning AlphaGo Zero tutorial](https://www.depthfirstlearning.com/2018/AlphaGoZero) (6 parts)
   
-    ✴️ 🟨 🟨 ⬜ ⬜ ⬜ 
+    ✴️ ✅ 🟨 ⬜ ⬜ ⬜ 
 - [ ]  [Depth First Learning WGAN tutorial](https://www.depthfirstlearning.com/2019/WassersteinGAN) (5 parts)
   
     ✴️ 🟨 🟨 ⬜ ⬜
@@ -179,12 +179,12 @@ I don't know how many of these it is feasible to finish in about 12 weeks but I 
 - [ ] Think of ~10 ideas that are beyond my present level of skills or knowledge i.e. where I have no idea what to do - and then try to come up with a plan to realise them 0️⃣ 3️⃣
 - [ ] Write >= 12 technical blogposts <s>whose main purpose is to practise articulating technical ideas rather than to be amazing</s>
    0️⃣ 3️⃣
-- [ ] [Read >=100 machine learning papers]({% post_url rc/ai/2021-01-12-101-Papers %}) (I get credit only when I have produced some output related to the paper) 0️⃣ 2️⃣ 6️⃣
+- [ ] [Read >=100 machine learning papers]({% post_url rc/ai/2021-01-12-101-Papers %}) (I get credit only when I have produced some output related to the paper) 0️⃣ 3️⃣ 1️⃣
     - [Papers for CS330: Supervised multi-task learning and transfer learning]({% post_url rc/cs330/2020-11-30-CS330-Week1 %}) (2)
     - [Papers for CS294: Autoregressive Models]({% post_url rc/cs294/2020-11-23-CS294-Week1 %}) (2)
     - [Notes on NeRFs]({% post_url rc/ai/2020-12-26-NeRF %}) (1)
     - [Weeks 1-4 at RC and ideas for week 5]({% post_url rc/log/2020-12-07-RC-Week-4 %}) (excluding the 3 also in the post below, 4)
-    - [101 Papers]({% post_url rc/ai/2021-01-12-101-Papers %})(17)
+    - [101 Papers]({% post_url rc/ai/2021-01-12-101-Papers %})(22)
 
 - [ ] Implement and train ~12 ML papers from scratch 0️⃣ 4️⃣ 
 - [ ] Implement and train the following Kaggle prize-winning models
