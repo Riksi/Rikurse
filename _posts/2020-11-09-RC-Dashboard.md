@@ -60,7 +60,7 @@ I don't know how many of these it is feasible to finish in about 12 weeks but I 
    
 - [ ] Cryptography ([Stanford course](https://crypto.stanford.edu/~dabo/courses/OnlineCrypto/), maybe also [Cryptopals](https://cryptopals.com/)) 
 
-    **Stanford course (7 x units)** ⬜ ⬜ ⬜ ⬜ ⬜
+    **Stanford course (7 x units)** ✅ ⬜ ⬜ ⬜ ⬜
     ⬜ ⬜
 
 - [ ] [Stanford Programming Languages](https://cs242.stanford.edu/f19) (8 x HW)
