@@ -43,7 +43,7 @@ I don't know how many of these it is feasible to finish in about 12 weeks but I 
 - [ ] CUDA programming ([Caltech CS179](http://courses.cms.caltech.edu/cs179/), [Oxford](https://people.maths.ox.ac.uk/gilesm/cuda/))
 
 
-    **UPDATE: going to focus on CS179 as the assignments are more challenging (no criticism of the Oxford course which has good lectures that I have found useful but it has been design as a crash course rather than a computer science course)**
+    **UPDATE: going to focus on CS179 as the assignments are more challenging (no criticism of the Oxford course which has good lectures that I have found useful but it has been designed as a crash course rather than a computer science course)**
     **Caltech CS179 (6 x labs + 1 x project proposal + 1 x project)**
     ✅ ✅ ✅ 🟨 ⬜ ⬜ ⬜ ⬜
     
@@ -92,12 +92,12 @@ I don't know how many of these it is feasible to finish in about 12 weeks but I 
     ✅ 🟨 🟨 🟨 ⬜
     ⬜ ⬜ 
 
-- [ ] [MIT Advanced Fluid Mechanics](https://ocw.mit.edu/courses/mechanical-engineering/2-25-advanced-fluid-mechanics-fall-2013/)(12 x units)
+- [x] [MIT Advanced Fluid Mechanics](https://ocw.mit.edu/courses/mechanical-engineering/2-25-advanced-fluid-mechanics-fall-2013/)(12 x units)
     ✅ ✅ ✅ ✅ 
     ✅ ✅ ✅ ✅  
     ✅ ✅ ✅ ✅
 
-- [ ] [edX Mastering Quantum Mechanics](https://courses.edx.org/courses/course-v1:MITx+8.05.1x+1T2018/course/) (14 assignments)
+- [x] [edX Mastering Quantum Mechanics](https://courses.edx.org/courses/course-v1:MITx+8.05.1x+1T2018/course/) (14 assignments)
 
     ✅ ✅ ✅ ✅ 
     ✅ ✅ ✅ ✅ 
@@ -162,7 +162,7 @@ I don't know how many of these it is feasible to finish in about 12 weeks but I 
 - [ ] Topics from [Stanford CS231A](http://web.stanford.edu/class/cs231a/) (covers some useful theoretical concepts)
 - [ ]  [Depth First Learning AlphaGo Zero tutorial](https://www.depthfirstlearning.com/2018/AlphaGoZero) (6 parts)
   
-    ✴️ ✅ 🟨 ⬜ ⬜ ⬜ 
+   ✅ ✅ 🟨 ⬜ ⬜ ⬜ 
 - [ ]  [Depth First Learning WGAN tutorial](https://www.depthfirstlearning.com/2019/WassersteinGAN) (5 parts)
   
     ✴️ 🟨 🟨 ⬜ ⬜
