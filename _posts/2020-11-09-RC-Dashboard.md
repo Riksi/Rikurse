@@ -186,7 +186,7 @@ I don't know how many of these it is feasible to finish in about 12 weeks but I 
     - [Weeks 1-4 at RC and ideas for week 5]({% post_url rc/log/2020-12-07-RC-Week-4 %}) (excluding the 3 also in the post below, 4)
     - [101 Papers]({% post_url rc/ai/2021-01-12-101-Papers %})(22)
 
-- [ ] Implement and train ~12 ML papers from scratch 0️⃣ 4️⃣ 
+- [ ] Implement and train ~12 ML papers from scratch 0️⃣ 5️⃣ 
 - [ ] Implement and train the following Kaggle prize-winning models
   
     ✴️  [Lyft 3D Object Detection for Autonomous Vehicles](https://www.kaggle.com/c/3d-object-detection-for-autonomous-vehicles/discussion/133895)
