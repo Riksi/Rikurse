@@ -162,7 +162,7 @@ I don't know how many of these it is feasible to finish in about 12 weeks but I 
 - [ ] Topics from [Stanford CS231A](http://web.stanford.edu/class/cs231a/) (covers some useful theoretical concepts)
 - [ ]  [Depth First Learning AlphaGo Zero tutorial](https://www.depthfirstlearning.com/2018/AlphaGoZero) (6 parts)
   
-   ✅ ✅ 🟨 ⬜ ⬜ ⬜ 
+   ✅ ✅ ✅ ⬜ ⬜ ⬜ 
 - [ ]  [Depth First Learning WGAN tutorial](https://www.depthfirstlearning.com/2019/WassersteinGAN) (5 parts)
   
     ✴️ 🟨 🟨 ⬜ ⬜
