@@ -52,7 +52,7 @@ I don't know how many of these it is feasible to finish in about 12 weeks but I 
 
 - [ ] [Caltech CS171: Introduction to Computer Graphics](http://courses.cms.caltech.edu/cs171/) (HW0 + HW1-6 + HW7.1 + HW7.2)
 
-    ✅ 🟢 🟢 🟨 🟨 ⬜ ⬜ ⬜ ⬜
+    ✅ ✅ 🟢 🟨 🟨 ⬜ ⬜ ⬜ ⬜
 
 - [ ] [MIT Distributed Systems](https://pdos.csail.mit.edu/6.824/) (6.824) (Lab 1 + Lab2A-C + Lab3A-B + Lab4A-B + project proposal + final project)
 
