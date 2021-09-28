@@ -4,9 +4,6 @@ title:  "What I want to do at the Recurse Center between November 9th 2020 and F
 date:   2020-11-09 12:01:20 +0000
 categories: rc 
 ---
-
-Baseurl = {{site.baseurl}}
-
 <style>
 .highlight {background: rgba(255, 255, 0, 0.5);}
 
