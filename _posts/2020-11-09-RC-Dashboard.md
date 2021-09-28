@@ -5,6 +5,8 @@ date:   2020-11-09 12:01:20 +0000
 categories: rc 
 ---
 
+Baseurl = {{site.baseurl}}
+
 <style>
 .highlight {background: rgba(255, 255, 0, 0.5);}
 
