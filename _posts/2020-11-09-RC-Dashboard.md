@@ -84,7 +84,7 @@ I don't know how many of these it is feasible to finish in about 12 weeks but I 
 ### Miscellaneous study goals
 - [ ] <span class="highlight">**[Stanford Convex Optimization](https://www.edx.org/course/convex-optimization) (Stanford’s course on the edX platform; 11 x units)**</span>
 
-  ✅ ✅ ✅ ✅ ✅ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜
+  ✅ ✅ ✅ ✅ ✅ ✅ ⬜ ⬜ ⬜ ⬜ ⬜
 - [ ] <span class="highlight">**[MIT Discrete Mathematics](https://openlearninglibrary.mit.edu/courses/course-v1:OCW+6.042J+2T2019/about) (12 x problem sets but might skip the last 4 as they are about probability which I have covered already)**</span>
 
    ✅ ✅ ✅ ✅ 
