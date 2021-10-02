@@ -15,7 +15,7 @@ categories: rc
 
 I don't know how many of these it is feasible to finish in about 12 weeks but I wish to do as much as possible.
 
-**Key:** &nbsp; ⬜ To Do &nbsp; ✴️  In Progress &nbsp; ✅ Done &nbsp; 🟨 Target is to finish by end of RC &nbsp; 🟢 Programming Parts Done &nbsp; 🔵 A self-contained section complete; <span class="highlight" style="color:transparent; border: 1px solid black; font-weight bold">[ ]</span> **Tasks for challenge**
+**Key:** &nbsp; ⬜ To Do &nbsp; ✴️  In Progress &nbsp; ✅ Done &nbsp; 🟨 Target is to finish by <s>end of RC</s> by challenge deadline &nbsp; 🟢 Programming Parts Done &nbsp; 🔵 A self-contained section complete; <span class="highlight" style="color:transparent; border: 1px solid black; font-weight bold">[ ]</span> **Tasks for challenge**
 
 ### Machine learning  
 - [ ] [Natural Language Processing with Deep Learning](http://web.stanford.edu/class/cs224n/) (Stanford CS224n) (5 x HW + 1 x project proposal + 1 x project milestone + 1 x final project)
@@ -28,7 +28,7 @@ I don't know how many of these it is feasible to finish in about 12 weeks but I 
     
 - [ ] <span class="highlight">**[Berkeley Deep Unsupervised Learning](https://sites.google.com/view/berkeley-cs294-158-sp20/home) (4 x HW + 1 x project milestone + 1 x final project)**</span>
 
-    ✴️ 🟨 🟨 ⬜ ⬜ ⬜
+    ✴️ 🟨 🟨 🟨 ⬜ ⬜
    
 - [ ] <span class="highlight">**[Stanford Deep Multi-Task and Meta Learning](https://cs330.stanford.edu/) (4 x HW + 1 x project milestone + 1 x final project)**</span>
 
@@ -50,7 +50,7 @@ I don't know how many of these it is feasible to finish in about 12 weeks but I 
     
     **UPDATE: going to focus on CS179 as the assignments are more challenging (no criticism of the Oxford course which has good lectures that I have found useful but it has been designed as a crash course rather than a computer science course)**
     <span class="highlight">**Caltech CS179 (6 x labs + 1 x project proposal + 1 x project)**</span>
-    ✅ ✅ ✅ ✅ ⬜ ⬜ ⬜ ⬜
+    ✅ ✅ ✅ ✅ 🟨 🟨 ⬜ ⬜
     
     <span class="highlight">**Oxford (12 x practicals)**</span>
     ✅ ✅ ✴️ 🟨 🟨 🟨 ⬜ ⬜ ⬜ ⬜ ⬜
@@ -65,8 +65,8 @@ I don't know how many of these it is feasible to finish in about 12 weeks but I 
    
 - [ ] Cryptography ([Stanford course](https://crypto.stanford.edu/~dabo/courses/OnlineCrypto/), maybe also [Cryptopals](https://cryptopals.com/)) 
 
-<span class="highlight">**Stanford course (7 x units)**</span> ✅ ✅ ✅ ✅ ⬜
-    ⬜ ⬜
+<span class="highlight">**Stanford course (7 x units)**</span> ✅ ✅ ✅ ✅ 🟨
+    🟨 🟨
 
 - [ ] <span class="highlight">**[Stanford Programming Languages](https://cs242.stanford.edu/f19) (8 x HW)**</span>
   
@@ -82,9 +82,9 @@ I don't know how many of these it is feasible to finish in about 12 weeks but I 
     ❔ 
 
 ### Miscellaneous study goals
-- [ ] <span class="highlight">**[Stanford Convex Optimization](https://www.edx.org/course/convex-optimization) (Stanford’s course on the edX platform; 11 x units)**</span>
+- [ ] <span class="highlight">**[Stanford Convex Optimization](https://www.edx.org/course/convex-optimization) (Stanford’s course on the edX platform; 11 units but only 9 assignments so I am doing an equivalent number of exercises for the remaining two)**</span>
 
-  ✅ ✅ ✅ ✅ ✅ ✅ ⬜ ⬜ ⬜ ⬜ ⬜
+  ✅ ✅ ✅ ✅ ✅ ✅ ✅ 🟨 🟨 ⬜ ⬜
 - [ ] <span class="highlight">**[MIT Discrete Mathematics](https://openlearninglibrary.mit.edu/courses/course-v1:OCW+6.042J+2T2019/about) (12 x problem sets but might skip the last 4 as they are about probability which I have covered already)**</span>
 
    ✅ ✅ ✅ ✅ 
@@ -169,7 +169,7 @@ I don't know how many of these it is feasible to finish in about 12 weeks but I 
 - [ ] Topics from [Stanford CS231A](http://web.stanford.edu/class/cs231a/) (covers some useful theoretical concepts)
 - [ ]  <span class="highlight">**[Depth First Learning AlphaGo Zero tutorial](https://www.depthfirstlearning.com/2018/AlphaGoZero) (6 parts)**</span>
   
-   ✅ ✅ ✅ ✅ ✅ ⬜
+   ✅ ✅ ✅ ✅ ✅ 🟨
 - [ ]  <span class="highlight">**[Depth First Learning WGAN tutorial](https://www.depthfirstlearning.com/2019/WassersteinGAN) (5 parts)**</span>
   
     ✴️ 🟨 🟨 ⬜ ⬜
@@ -191,8 +191,8 @@ I don't know how many of these it is feasible to finish in about 12 weeks but I 
 - [ ] <span class="highlight">**[Read >=101 machine learning papers]({{site.baseurl}}{% post_url 2021-01-12-101-Papers %}) (I get credit only when I have produced some output related to the paper) 0️⃣ 3️⃣ 5️⃣**</span>
 
 ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅
-✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜
-⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜
+✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ 🟨 🟨 🟨 🟨 🟨 🟨 🟨 🟨 🟨 🟨 🟨 🟨 🟨 🟨 🟨
+🟨 🟨 🟨 🟨 🟨 🟨 🟨 ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜
 ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜
                                 ⬜
 
