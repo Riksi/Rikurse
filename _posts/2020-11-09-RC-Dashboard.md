@@ -44,7 +44,7 @@ I don't know how many of these it is feasible to finish in about 12 weeks but I 
 - [ ] [MIT Computation Structures](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-004-computation-structures-spring-2017/) AND / OR [Nand2tetris](https://www.coursera.org/learn/build-a-computer) 
     
 - [ ] <span class="highlight">**Nand2tetris (13 x HW)**</span>
-    ✅ ✴️ 🟨 🟨 🟨 ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜
+    ✅ ✅ 🟨 🟨 🟨 ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜
 - [ ] CUDA programming ([Caltech CS179](http://courses.cms.caltech.edu/cs179/), [Oxford](https://people.maths.ox.ac.uk/gilesm/cuda/))
 
     
