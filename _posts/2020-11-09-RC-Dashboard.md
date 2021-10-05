@@ -28,7 +28,7 @@ I don't know how many of these it is feasible to finish in about 12 weeks but I 
     
 - [ ] <span class="highlight">**[Berkeley Deep Unsupervised Learning](https://sites.google.com/view/berkeley-cs294-158-sp20/home) (4 x HW + 1 x project milestone + 1 x final project)**</span>
 
-    ✴️ 🟨 🟨 🟨 ⬜ ⬜
+    ✴️ ✅ 🟨 🟨 ⬜ ⬜
    
 - [ ] <span class="highlight">**[Stanford Deep Multi-Task and Meta Learning](https://cs330.stanford.edu/) (4 x HW + 1 x project milestone + 1 x final project)**</span>
 
