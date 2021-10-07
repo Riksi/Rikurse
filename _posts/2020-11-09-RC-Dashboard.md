@@ -28,7 +28,7 @@ I don't know how many of these it is feasible to finish in about 12 weeks but I 
     
 - [ ] <span class="highlight">**[Berkeley Deep Unsupervised Learning](https://sites.google.com/view/berkeley-cs294-158-sp20/home) (4 x HW + 1 x project milestone + 1 x final project)**</span>
 
-    ✴️ ✅ 🟨 🟨 ⬜ ⬜
+    ✴️ ✅ ✅ 🟨 ⬜ ⬜
    
 - [ ] <span class="highlight">**[Stanford Deep Multi-Task and Meta Learning](https://cs330.stanford.edu/) (4 x HW + 1 x project milestone + 1 x final project)**</span>
 
@@ -211,11 +211,12 @@ I don't know how many of these it is feasible to finish in about 12 weeks but I 
 
 - SNAIL
 - MAML for sinusoid data
-- Simple VAE and DC-GAN
+- Simple 2D data VAE and DC-GAN
 - Transformer for machine translation (this is a placeholder for now as I can't remember which other model I implemented and I only want to give myself credit only when it is due)
 - MoCov1v2 (v1 with some v2 features by mistake)
 - MoCov1v2-TPU and MoCov1
 - Various simple Flow Models (counted as 1)
+
 
 - [ ] Implement and train the following Kaggle prize-winning models
   
