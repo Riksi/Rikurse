@@ -65,7 +65,7 @@ I don't know how many of these it is feasible to finish in about 12 weeks but I 
    
 - [ ] Cryptography ([Stanford course](https://crypto.stanford.edu/~dabo/courses/OnlineCrypto/), maybe also [Cryptopals](https://cryptopals.com/)) 
 
-<span class="highlight">**Stanford course (7 x units)**</span> ✅ ✅ ✅ ✅ 🟨
+<span class="highlight">**Stanford course (7 x units)**</span> ✅ ✅ ✅ ✅ ✅
     🟨 🟨
 
 - [ ] <span class="highlight">**[Stanford Programming Languages](https://cs242.stanford.edu/f19) (8 x HW)**</span>
@@ -88,7 +88,7 @@ I don't know how many of these it is feasible to finish in about 12 weeks but I 
 - [ ] <span class="highlight">**[MIT Discrete Mathematics](https://openlearninglibrary.mit.edu/courses/course-v1:OCW+6.042J+2T2019/about) (12 x problem sets but might skip the last 4 as they are about probability which I have covered already)**</span>
 
    ✅ ✅ ✅ ✅ 
-   ⬜ ⬜ ⬜ ⬜ 
+   ✅ ⬜ ⬜ ⬜ 
    ❔ ❔ ❔ ❔
   
 
