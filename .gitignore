@@ -5,3 +5,5 @@ _drafts
 .jekyll-metadata
 vendor
 .vscode
+.DS_Store
+__pycache__
