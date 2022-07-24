@@ -188,10 +188,10 @@ I don't know how many of these it is feasible to finish in about 12 weeks but I 
 ✅ ✅ ✅ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜
 
 - [ ] <span class="highlight">**Write >= 12 technical blogposts <s>whose main purpose is to practise articulating technical ideas rather than to be amazing</s> 0️⃣ 3️⃣**</span>
-- [ ] <span class="highlight">**[Read >=101 machine learning papers]({{site.baseurl}}{% post_url 2021-01-12-101-Papers %}) (I get credit only when I have produced some output related to the paper) 0️⃣ 3️⃣ 8️⃣**</span>
+- [ ] <span class="highlight">**[Read >=101 machine learning papers]({{site.baseurl}}{% post_url 2021-01-12-101-Papers %}) (I get credit only when I have produced some output related to the paper) 0️⃣ 4️⃣ 2️⃣**</span>
 
 ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅
-✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ 🟨 🟨 🟨 🟨 🟨 🟨 🟨 🟨 🟨 🟨 🟨 🟨
+✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ 🟨 🟨 🟨 🟨 🟨 🟨 🟨 🟨
 🟨 🟨 🟨 🟨 🟨 🟨 🟨 ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜
 ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜
                                 ⬜
@@ -200,7 +200,7 @@ I don't know how many of these it is feasible to finish in about 12 weeks but I 
 - [Papers for CS294: Autoregressive Models]({{site.baseurl}}{% post_url cs294/_posts/2020-11-23-CS294-Week1 %}) (2)
 - [Notes on NeRFs]({{site.baseurl}}{% post_url 2020-12-26-NeRF %}) (1)
 - [Weeks 1-4 at RC and ideas for week 5]({{site.baseurl}}{% post_url 2020-12-07-RC-Week-4 %}) (excluding the 3 also in the post below, 4)
-- [101 Papers]({{site.baseurl}}{% post_url 2021-01-12-101-Papers %})(26)
+- [101 Papers]({{site.baseurl}}{% post_url 2021-01-12-101-Papers %})(30)
 
 - [ ] <span class="highlight">**Implement and train ~24 ML papers from scratch**</span> 
 
