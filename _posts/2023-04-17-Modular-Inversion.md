@@ -7,9 +7,9 @@ categories: rc maths
 
 ## Modular arithmetic inverse
 
-In basic arithmetic with real numbers the inverse of an number $x$ is another number $y$ such that $xy = 1$. All numbers except for 0 have an inverse. But this is not the case modular arithmetic. 
+In basic arithmetic with real numbers the inverse of an number $x$ is another number $y$ such that $xy = 1$. All numbers except for 0 have an inverse. 
 
-Consider $\mathbb{Z}_N = \{x: x \in \mathbb{Z}, 0 \leq x \lt N\}$. The inverse of $x$ is a number $y \in \mathbb{Z}_N$ such that $yx = 1 \mod N$. This means of course that $x$ is the inverse of $y$. 
+The definition for the modular arithmetic inverse is similar. Consider $\mathbb{Z}_N = \{x: x \in \mathbb{Z}, 0 \leq x \lt N\} = \{0, \ldots N-1\}$. The inverse of $x$ is a number $y \in \mathbb{Z}_N$ such that $yx = 1 \mod N$. As with real numbers this means that $x$ is the inverse of $y$. 
 
 Now it might appear from this definition that $y$ is the inverse of more than one number. For example for $N=7$,
 
@@ -70,7 +70,6 @@ N
 \\ \implies \exists \hspace{0.1cm} \alpha \in \mathbb{Z} \hspace{0.1cm} \text{s.t.} \hspace{0.1cm} \beta x = \alpha N + 1
 \\ \implies - \alpha N + \beta x  = 1
 \\ \implies \exists \hspace{0.1cm} a=-\alpha, b=\beta \in \mathbb{Z} \hspace{0.1cm} \text{s.t.} \hspace{0.1cm} aN + bx = 1
-\\ \implies \gcd(x, N) = 1
-$$
+\\ \implies \gcd(x, N) = 1 $$
 
 where the last step comes about because if 1 is a linear combination of $x$ and $N$, it is necessarily the smallest positive integer linear combination of $x$ and $N$ and is therefore the gcd.
