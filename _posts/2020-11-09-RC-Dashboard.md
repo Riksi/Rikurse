@@ -72,7 +72,7 @@ I don't know how many of these it is feasible to finish in about 12 weeks but I 
 
 - [ ] <span class="highlight">**[Stanford Programming Languages](https://cs242.stanford.edu/f19) (8 x HW)**</span>
   
-    ✅ ✴️ 🟨 🟨 🟨
+    ✅ ✅ 🟨 🟨 🟨
     ⬜ ⬜ ⬜ 
 
 - [ ] [Stanford Compilers](https://web.stanford.edu/class/cs143/) 
