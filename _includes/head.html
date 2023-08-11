@@ -36,6 +36,7 @@
     {%- include google-analytics.html -%}
   {%- endif -%}
 
+  {%- if jekyll.environment == 'production' -%}
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-F27SJJLF09"></script>
   <script>
@@ -45,4 +46,5 @@
 
     gtag('config', 'G-F27SJJLF09');
   </script>
+  {%- endif -%}
 </head>
