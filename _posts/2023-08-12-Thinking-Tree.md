@@ -2,7 +2,7 @@
 layout: post
 title:  "Thinking Fast and Slow
 with Deep Learning and Tree Search: Page-by-page notes"
-date:   2023-06-13 00:00:00 +0000
+date:   2023-08-12 00:00:00 +0000
 categories: paper ai
 ---
 
@@ -10,6 +10,9 @@ categories: paper ai
 
 * This will become a table of contents (this text will be scrapped).
 {:toc}
+
+### Links
+[ArXiv](https://arxiv.org/abs/1705.08439)
 
 ### 1. Introduction
 
@@ -48,11 +51,11 @@ Dual process theory:
 - EXIT enriched by an expert improvement step
 - Can exploit fast convergence properties of IL even in contexts where no strong player originally known including tabula rasa by improving expert player then re-solving IL problem
 - Algorithm is as follows
-    - At iteration $i$ create a set $\mathcal{S}_i$ of fame states by self play of the apprentice $\hat{\pi}_{i-1}$
+    - At iteration $i$ create a set $\mathcal{S}_i$ of fame states by self play of the apprentice <span markdown=1>$\hat{\pi}_{i-1}$</span>
     - In each state, use expert to calculate IL target
-    - Dataset $\mathcal{D}_i$ of state-target pairs $\left(s, \pi^*_{i-1}\left(a\vert s\right)\right)$
-    - IL: train new apprentice $\pi_i^*$ on $\mathcal{D}_i$
-    - Expert improvement: use new apprentice to update expert $\pi_i^* =  \pi^*_{i-1}\left(a\vert s\right)$
+    - Dataset $\mathcal{D}_i$ of state-target pairs <span markdown=1>$\left(s, \pi^*_{i-1}\left(a\vert s\right)\right)$</span>
+    - IL: train new apprentice <span markdown=1>$\pi_i^*$</span> on <span markdown=1>$\mathcal{D}_i$</span>
+    - Expert improvement: use new apprentice to update expert <span markdown=1>$\pi_i^* =  \pi^*_{i-1}\left(a\vert s\right)$</span>
     - Expert policy calculated using tree search algorithm
     - Apprentice can help expert find stronger policies:
         - Direct search towards promising moves

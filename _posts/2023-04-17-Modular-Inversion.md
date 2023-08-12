@@ -14,7 +14,7 @@ categories: rc maths
 
 In basic arithmetic with real numbers the inverse of an number $x$ is another number $y$ such that $xy = 1$. All numbers except for 0 have an inverse. 
 
-The definition for the modular arithmetic inverse is similar. Consider $\mathbb{Z}_N = \{x: x \in \mathbb{Z}, 0 \leq x \lt N\} = \{0, \ldots N-1\}$. The inverse of $x$ is a number $y \in \mathbb{Z}_N$ such that $yx = 1 \mod N$. As with real numbers this means that $x$ is the inverse of $y$. 
+The definition for the modular arithmetic inverse is similar. Consider $\mathbb{Z}_N = \\{x: x \in \mathbb{Z}, 0 \leq x \lt N\\} = \\{0, \ldots N-1\\}$. The inverse of $x$ is a number $y \in \mathbb{Z}_N$ such that $yx = 1 \mod N$. As with real numbers this means that $x$ is the inverse of $y$. 
 
 Now it might appear from this definition that $y$ is the inverse of more than one number. For example for $N=7$,
 
@@ -35,7 +35,7 @@ From now on we will only consider the inverse of numbers in $\mathbb{Z}_N$ since
 Modular arithmetic inverses differ in a few ways compared to regular arithmetic inverses. 
 
 ### $0$ is self-inverse in $\mathbb{Z}_1$
-In arithmetic over real numbers 0 never has an inverse but in modular arithmetic 0 is its own inverse in $\mathbb{Z}_1 = \{0\}$. Since $\forall x, x \mod 1 = 0$
+In arithmetic over real numbers 0 never has an inverse but in modular arithmetic 0 is its own inverse in $\mathbb{Z}_1 = \\{0\\}$. Since $\forall x, x \mod 1 = 0$
 
 $0 \mod 1 = 1 \mod 1 \\ \implies 0 = 0\cdot 0 = 1 \mod 1 \\
 \implies 0 = 0^{-1} \mod 1$
