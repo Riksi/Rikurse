@@ -195,10 +195,10 @@ I don't know how many of these it is feasible to finish in about 12 weeks but I 
 ✅ ✅ ✅ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜
 
 - [ ] <span class="highlight">**Write >= 12 technical blogposts <s>whose main purpose is to practise articulating technical ideas rather than to be amazing</s> 0️⃣ 3️⃣**</span>
-- [ ] <span class="highlight">**[Read >=101 machine learning papers]({{site.baseurl}}{% post_url 2021-01-12-101-Papers %}) (I get credit only when I have produced some output related to the paper) 0️⃣ 4️⃣ 2️⃣**</span>
+- [ ] <span class="highlight">**[Read >=101 machine learning papers]({{site.baseurl}}{% post_url 2021-01-12-101-Papers %}) (I get credit only when I have produced some output related to the paper) 0️⃣ 4️⃣ 8️⃣**</span>
 
 ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅
-✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ 🟨 🟨 🟨 🟨 🟨 🟨 🟨 🟨
+✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ 🟨 🟨
 🟨 🟨 🟨 🟨 🟨 🟨 🟨 ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜
 ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜ ⬜
                                 ⬜
