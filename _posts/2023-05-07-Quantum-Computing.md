@@ -5,6 +5,10 @@ date:   2023-04-13 19:01:20 +0000
 categories: rc maths
 ---
 
+<h2> Contents </h2>
+
+* This will become a table of contents (this text will be scrapped).
+{:toc}
 
 ## MIT 8.371.2x: Quantum Information Science II, Part 2 - Efficient Quantum Computing - fault tolerance and complexity
 ### Problem Set 1

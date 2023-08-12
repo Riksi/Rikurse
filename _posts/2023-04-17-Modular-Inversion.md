@@ -5,6 +5,11 @@ date:   2023-04-13 19:01:20 +0000
 categories: rc maths
 ---
 
+<h2> Contents </h2>
+
+* This will become a table of contents (this text will be scrapped).
+{:toc}
+
 ## Modular arithmetic inverse
 
 In basic arithmetic with real numbers the inverse of an number $x$ is another number $y$ such that $xy = 1$. All numbers except for 0 have an inverse. 
