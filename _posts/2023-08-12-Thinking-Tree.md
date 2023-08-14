@@ -34,7 +34,7 @@ Dual process theory:
 #### 2.1 Markov Decision Processes
 - Sequential decision making in MDP
 - At each timestep $t$ agent observes state $s_t$, chooses action $a_t$
-- In terminal state $s_T$, episodic reward $R$ is observe
+- In terminal state $s_T$, episodic reward $R$ is observed
 - Goal is to maximise $R$
 
 #### 2.2 Imitation Learning
@@ -51,7 +51,7 @@ Dual process theory:
 - EXIT enriched by an expert improvement step
 - Can exploit fast convergence properties of IL even in contexts where no strong player originally known including tabula rasa by improving expert player then re-solving IL problem
 - Algorithm is as follows
-    - At iteration $i$ create a set $\mathcal{S}_i$ of fame states by self play of the apprentice <span markdown=1>$\hat{\pi}_{i-1}$</span>
+    - At iteration $i$ create a set $\mathcal{S}_i$ of game states by self play of the apprentice <span markdown=1>$\hat{\pi}_{i-1}$</span>
     - In each state, use expert to calculate IL target
     - Dataset $\mathcal{D}_i$ of state-target pairs <span markdown=1>$\left(s, \pi^*_{i-1}\left(a\vert s\right)\right)$</span>
     - IL: train new apprentice <span markdown=1>$\pi_i^*$</span> on <span markdown=1>$\mathcal{D}_i$</span>
@@ -62,12 +62,13 @@ Dual process theory:
         - Evaluate states encountered more quickly and accurately
     - IL like humans improving intuition by studying example problems, expert improvement like using improved intuition to guide future analysis
     
+
     ```python
     def expert_iteration()
         pi_hat = [0 for i in range(max_iterations+1)]
         pi_star = [0 for i in range(max_iterations+1)]
         pi_hat[0] = initial_policy()
-        pi_star[0] = build_expert(pi_hat_0)
+        pi_star[0] = build_expert(pi_hat[0])
         for i in range(1,max_iterations + 1):
             S_i = sample_self_play(pi_hat[i-1])
             D_i = (
@@ -82,7 +83,7 @@ Dual process theory:
     - Size of the performance gap between apprentice and expert - induces upper bound on apprentice performance in next iteration
     - Closeness of the performance of new apprentice to performance of expert it learns from - how closely upper bound is approached
 - Expert role: exploration and determining strong move sequences from a single position
-- Apprentice: generalisation of the policies discovered by expert across whole state space and providing rapid access to the that strong policy for bootstrapping in future searches
+- Apprentice: generalisation of the policies discovered by expert across whole state space and providing rapid access to that strong policy for bootstrapping in future searches
 - Canonical expert: tree search
 - Canonical apprentice: deep NN
 
@@ -123,7 +124,7 @@ Dual process theory:
 - Each search tree node corresponds to possible state $s$ in the game:
     - Root: current state
     - Children: states resulting from single move from current
-- Edge $(s1, a)$ represents action $a$ taken in $s1$ to reach $s2$
+- Edge $(s_1, a)$ represents action $a$ taken in $s_1$ to reach $s_2$
 - $n(s)$: number of iterations in which node has been visited so far
 - $n(s, a)$: number of times edge has been traversed
 - $r(s, a)$: sum of rewards from simulations that passed through the edge
@@ -134,12 +135,13 @@ $$\text{UCT}(s, a) = c_b \sqrt{\frac{\log n(s)}{n(s, a)}} + \frac{r(s, a)}{n(s, 
 - Rollout phase starts when $a$ from $s_L$ gets to $s'$ not yet in search tree
 - Without domain specific info, default policy: choose uniformly from available actions
 
-- To build up search tree whim simulation goes from tree to rollout phase:
+- To build up search tree when simulation goes from tree to rollout phase:
     - Expand adding $s'$ as child of $s_L$
     - Once rollout complete, reward signal propagated through the tree (*backup*), updating $n(s)$, $n(s, a)$ and $r(s, a)$
 
 - For all MCTS agents, they use default number of simulations per move of 10k and uniform policy
-- Also use RAVE [TODO: what is this?] 
+- Also use RAVE (Rapid Action Value Estimation), which is a method used to speed up the MCTS algorithm by using the values of actions not only in their own simulation, but also in other simulations where they were played (I got this explanation about RAVE from ChatGPT so don't know for sure if it's correct).
+
 
 #### 4.2 Imitation Learning from MCTS
 
@@ -183,7 +185,7 @@ $$\text{UCT}(s, a) = c_b \sqrt{\frac{\log n(s)}{n(s, a)}} + \frac{r(s, a)}{n(s, 
 - Discover improvements on this policy as search progresses - like humans can correct intuitions through lookahead
 - NN policy biases MCTS tree policy towards moves believed to be stronger
 - Node expansion: Evaluate apprentice policy $\hat{\pi}$ at state and store
-- Modify UCT formula - add bonus proportional to $\hat{\pi}(a|s)$:
+- Modify UCT formula - add bonus proportional to <span markdown=1>$\hat{\pi}(a|s)$</span>:
 
   $$\text{UCT}_{\text{P-NN}}(s, a) = \text{UCT}(s, a) + w_a \frac{\hat{\pi}(a|s)}{n(s, a) + 1}$$
 
@@ -282,7 +284,7 @@ $$\text{UCT}(s, a) = c_b \sqrt{\frac{\log n(s)}{n(s, a)}} + \frac{r(s, a)}{n(s, 
 - Can recover version of Policy Iteration by using Monte Carlo Search as expert
 - Other works also attempted Imitation Learning outperforming the original expert
   - Silver et al.: Imitation Learning followed by RL
-  - Kai-Wei, et al.: Monte Carlo estimates to compute $Q^*(s, a)$ and train apprentice $\pi$ to maximize $\sum_a \pi(a|s)Q^*(s, a)$
+  - Kai-Wei, et al.: Monte Carlo estimates to compute $Q^*(s, a)$ and train apprentice $\pi$ to maximize <span markdown=1>$\sum_a \pi(a|s)Q^*(s, a)$</span>
     - Rollout policy changed each iteration after first to a mix of the most recent apprentice and original expert
     - Can see it as blend of an RL algorithm with Imitation Learning: combines Policy Iteration and Imitation Learning
 - Neither approach able to improve original expert policy - useful only at the beginning of training
