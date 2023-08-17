@@ -93,7 +93,7 @@ Dual process theory:
 - But can parallelise it and the plans can be summarised with a vector < 1KB in size
 
 #### 3.3 Online expert iteration
-- Imitating learning restarted from scratch in each step of EXIT which throws away entire dataset and adds a lot to runtime of algorithm
+- Imitation learning restarted from scratch in each step of EXIT which throws away entire dataset and adds a lot to runtime of algorithm
 - Online version trains the apprentice with $\cup_{z\leq i}\mathcal{D}_z$ instead of only with $\mathcal{D}_i$.
 - Dataset aggregation makes it similar to DAGGER algorithm except for expert improvement step
 - With dataset aggregation you can request fewer move choices from expert at each iteration while still maintaining a large dataset
@@ -148,7 +148,8 @@ $$\text{UCT}(s, a) = c_b \sqrt{\frac{\log n(s)}{n(s, a)}} + \frac{r(s, a)}{n(s, 
 - Train standard ConvNet to imitate MCTS expert
 
 **Learning Targets**
-- *Chosen-action target* (CAT): learning target that is moves chosen by MCTS
+- *Chosen-action target* (CAT): learning target that comprises move chosen by MCTS
+- Loss $L_\text{CAT} = -\log\left[\pi\left(a^*\vert s\right)\right]$ where $a^* = \arg\max_a\left(n(s, a)\right)$
 - *Tree-policy target* (TPT): average tree policy of MCTS at the root - try to match distribution $n(s,a)/n(s)$ where $s$ is starting position and $n(s) = 10000$ (default number of simulations)
 - Loss $$L_\text{TPT} = -\sum_a\frac{n(s, a)}{n(s)}\log\left[\pi\left(a\vert s\right)\right]$$
 - TPT cost-sensitive unlike CAT
@@ -163,7 +164,7 @@ $$\text{UCT}(s, a) = c_b \sqrt{\frac{\log n(s)}{n(s, a)}} + \frac{r(s, a)}{n(s, 
     - Select single state from each
     - MCTS is exploration policy for initial dataset with only 1k iterations - to reduce computation time and encourage wider position distribution
     - Then DAGGER followed to expand dataset using most recent apprentice policy to sample 100k more positions - 1/game to ensure no correlations
-    - 2 advantages over sample more positions in same way:
+    - 2 advantages over sampling more positions in same way:
         - Selecting with apprentice is faster
         - Selecting with apprentice results in positions closer to distribution that apprentice visits at test time
 
@@ -221,8 +222,8 @@ $$\text{UCT}(s, a) = c_b \sqrt{\frac{\log n(s)}{n(s, a)}} + \frac{r(s, a)}{n(s, 
 
 - Compare EXIT to the policy gradient algorithm from Silver et al. which achieved SOTA for Go.
 - They initialised the algorithm with a network trained on human expert moves from a dataset of 30m positions and used REINFORCE
-- Initialises with the best network from section 4
-- Common approach when known experts are not strong enough: Imitation Learning initialised followed by Reinforcement Learning improvement
+- Initialised with the best network from section 4
+- Common approach when known experts are not strong enough: Imitation Learning initialisation followed by Reinforcement Learning improvement
 - Batch EXIT: 3 training iters, each time creating dataset of 243k moves
 - Online EXIT: the dataset grows, supervised learning step becomes slower
 - Tested two forms of online EXIT to avoid this
@@ -233,7 +234,7 @@ $$\text{UCT}(s, a) = c_b \sqrt{\frac{\log n(s)}{n(s, a)}} + \frac{r(s, a)}{n(s, 
 
 - EXIT vs REINFORCE:
   - Learns stronger policies faster
-  - Shows no sign of instability - Policy improves consistently each iter
+  - Shows no sign of instability - policy improves consistently each iter
   - Little variation in performance between each training run
 - Separating the tree search from generalisation ensures plans don't overfit to a current opponent since tree search considers multiple possible responses to recommended moves
 - Online expert iteration significantly outperforms batch mode
@@ -277,7 +278,7 @@ $$\text{UCT}(s, a) = c_b \sqrt{\frac{\log n(s)}{n(s, a)}} + \frac{r(s, a)}{n(s, 
   - 59.3% against 100k iteration-MoHex, 
   - 55.6% against 4-second-per-move-MoHex (with parallel solver switched on),
 - These are than six times slower than their searcher
-- Remarkable since training curves in [Figure 3](#figure-3) don't suggest convergence
+- Remarkable since training curves in [Figure 3](#figure-3-distributed-online-exit-apprentices-and-experts-withwithout-neural-network-value-estimation-black-dashed-line-represents-mohexs-rating-10k-iterations-per-move) don't suggest convergence
 
 ### 7 Related Work
 - EXIT has several connections to existing RL algorithms given different choices of expert class

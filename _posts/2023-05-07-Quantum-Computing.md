@@ -5,6 +5,15 @@ date:   2023-04-13 19:01:20 +0000
 categories: rc maths
 ---
 
+$$\newcommand{\ket}[1]{\left\lvert #1 \right \rangle}$$
+
+<style>
+    .hi{
+        background-color: #00ff00ab;
+    }
+</style>
+
+
 <h2> Contents </h2>
 
 * This will become a table of contents (this text will be scrapped).
@@ -14,6 +23,14 @@ categories: rc maths
 ### Problem Set 1
 
 #### Fault-tolerant NAND gate / Fault-tolerant NAND gate
+
+The output is 
+
+$$\overline{\overline{x \cdot y} \cdot \overline{y \cdot z} \cdot \overline{z \cdot x}}$$ 
+
+which can be obtained without NOT gates by using De Morgan's theorem
+
+$${x \cdot y} + {y \cdot z} + {z \cdot x}$$
 
 #### Gate teleportation / Rotation gates and the C3 family
 
@@ -28,7 +45,9 @@ $$W = V Z V^\dagger = S^\dagger H S$$
 
 Using only S and H gates, we can implement the W gate as follows:
 
+```
 W = [S(0), H(0), S(0), S(0), S(0)]
+```
 
 noting that 
 
@@ -41,8 +60,7 @@ $$Z = S^2 \\
 U = [CNOT(1, 0), X(2)]
 V = [CZ(2, 1), Z(0)]
 
-## Quantum Information Science II, Part 3 - Advanced quantum algorithms and information theory
-
+## MIT 8.371.3x: Quantum Information Science II, Part 3 - Advanced quantum algorithms and information theory
 ### Problem Set 1
 
 #### Factoring using feedback: repetition / Quantum factoring by feedback: repetition III
@@ -57,6 +75,118 @@ $$p(k, n) =
 \sum_{a\cdot\mathbf{1}_t=n}\left \vert\left( \langle a \vert \otimes \langle \lambda_k \vert\right)\vert \chi_t \rangle\right \vert ^2 = \binom{t}{n}\frac{1}{r} \cos^{2n}(\pi \phi_k) \sin^{2(t-n)}(\pi \phi_k)$$
 
 $$\vert\chi _ t\rangle  = \frac{1}{\sqrt{r}} \sum _ k \vert A_ k\rangle ^{\otimes t} \vert\lambda _ k\rangle$$
+
+### Problem Set 2
+
+#### Communication complexity II
+
+##### Proof of useful result
+First let us show that for all $B$-bit strings there are exactly half that have an even and odd number of 1's. 
+
+- Let $N_1(s)$ denote the number of 1's in string $s$
+
+- Define
+
+    $$S_{B, \text{odd}} = \{s:s \in \{0,1\}^{B}, N_1(s)\text{odd}\} \\
+    S_{B, \text{even}} = \{s:s \in \{0,1\}^{B}, N_1(s)\text{even}\}$$
+
+- By definition
+
+$$S_{B, \text{odd}} \cap S_{B, \text{even}} = \emptyset$$
+
+- Since each $B$-bit string belongs in exactly one set
+
+$$S_{B, \text{odd}} \cup S_{B, \text{even}} = \{0,1\}^B$$
+
+- The goal is to show that $P(B) = \left\vert S_{B, \text{odd}}\right\vert = \left\vert S_{B, \text{even}}\right\vert = 2^{B-1}$ holds for all $B$
+
+The proof is by induction.
+
+**Base case, $P(1)$**
+- $\\{0,1\\}^B = \\{0,1\\}$ so that $S_{B, \text{odd}} = \\{1\\}$ and $S_{B, \text{even}} = \\{0\\}$
+- Both have exactly $2^{1-1} = 1$ elements so $P(1)$ holds
+
+**Induction, $P(B)$**
+- Assume $P(B-1)$ holds
+- Note that string $a' \in \\{0,1\\}^B$ can be written as $a'_0a$ where $a \in \\{0,1\\}^{B-1}$
+- Then $N_1(a') = a'_0 + N_1(a)$
+- In particular if $N_1(a) = a'0$ then $N_1(a)$ is even otherwise $N_1(a)$ is odd
+- By the induction hypothesis we assume that 
+    
+$$\left\vert S_{B-1, \text{odd}}\right\vert = \left\vert S_{B-1, \text{even}}\right\vert = 2^{B-2}$$
+
+- Then the number of strings with an odd number of 1's is 
+    
+$$\begin{align*}
+\left\vert S_{B, \text{odd}}\right\vert &= \left\vert\{s'=s_0s:s_0=0, s\in S_{B-1, \text{odd}}\}\right\vert + \left\vert\{s'=s_0s:s_0=1, s\in S_{B-1, \text{even}}\}\right\vert \\
+&= \left\vert S_{B-1, \text{odd}}\right\vert + \left\vert S_{B-1, \text{even}}\right\vert \\
+&= 2^{B-2} + 2^{B-2} \\
+&= 2^{B-1}
+\end{align*}$$
+
+- From this we see that number of strings with an even number of 1's is 
+
+$$\left\vert S_{B, \text{even}}\right\vert = \left\vert\{0,1\}^B\right\vert - \left\vert S_{B, \text{odd}}\right\vert = 2^B - 2^{B-1} = 2^{B-1} = \left\vert S_{B, \text{odd}}\right\vert \quad \square$$
+
+
+##### Problem
+
+Now let us return to the problem
+
+$$
+\begin{align*}
+H_2^{\otimes n} \ket{\phi} &= H_2^{\otimes n} \frac{1}{\sqrt{2^n}} \sum_y (-1)^{x \cdot y} \ket {x, y} \\
+&= \frac{1}{\sqrt{2^n}} \sum_y (-1)^{x \cdot y} \ket{x} H^{\otimes n}  \ket {y} \\
+&= \frac{1}{\sqrt{2^n}} \sum_y (-1)^{x \cdot y} \ket{x} \frac{1}{\sqrt{2^n}}\sum_z (-1)^{z \cdot y} \ket {y} \\
+&= \frac{1}{2^n} \ket{x}\sum_z \left(\sum_y (-1)^{(x+z) \cdot y}\right) \ket{z}
+\end{align*}
+$$
+
+The additions and multiplications are all mod 2 so $a=x+z=x \oplus z$. Let $S_1 = \left\\{i: a_i=1 \right\\}$. Then we can write
+
+$$
+\begin{align*}
+a \cdot y &= \sum_i a_i \cdot y_i \\
+&= \sum_{i \in S_1} a_i \cdot y_i \\
+&= \sum_{i \in S_1} y_i
+\end{align*} 
+$$
+
+This is a sum over $\vert S_1\vert$-bit sub-string of $y$.  Since $y$ ranges over all $2^{n-1}$ bit strings, for each possible such substring $s$ there will be an equal number of strings $y$ where this substring equals $s$. Since there are $2^{\vert S_1 \vert}$ possible such substrings, there will be $2^{n-\vert S_1 \vert}$ strings $y$ such that
+
+$$y_{i_0}, y_{i_1}, \dots, y_{i_{\vert S_1\vert-1}} = s_0, s_1, \ldots, s_{\vert S_1\vert-1}$$  
+
+The case $a=\mathbf{0}_n$, where $S_1 = \emptyset$, occurs only when $x=z$. For this
+
+$$\sum_y (-1)^{a \cdot y} = \sum_y (-1)^0 = 2^n$$
+
+For $x\neq z \implies \vert S_1 \vert > 0$ we can write 
+
+$$\begin{align*}
+\sum_y (-1)^{a \cdot y}
+&= \sum_{y=0}^{2^{n-1}} (-1)^{\sum_{i \in S_1} y_i} \\
+&= 2^{n-\vert S_1 \vert} \sum_{s=0}^{2^\vert S_1\vert-1} (-1)^{\sum_{i=0}^{\vert S_1\vert-1}s_i} \\
+&= 2^{n-\vert S_1 \vert} \sum_{s=0}^{2^\vert S_1\vert-1} (-1)^{N_1(s)} \\
+&=2^{n-\vert S_1 \vert} \sum_{s, N_1(s) \text{odd}} (-1) + \sum_{s, N_1(s) \text{even}} 1 \\
+&=2^{n-\vert S_1 \vert}\left(-2^{\vert S_1\vert-1} + 2^{\vert S_1\vert-1}\right)\\
+&=0
+\end{align*}$$
+
+Combining these results we can write
+
+$$\begin{align*}
+H_2^{\otimes n} \ket{\phi} &= \frac{1}{2^n} \ket{x}\sum_z \left(\sum_y (-1)^{(x+z) \cdot y}\right) \ket{z} \\
+&= \frac{1}{2^n} \ket{x}\left(\left(\sum_y (-1)^{\mathbf{0}_n \cdot y}\right) \ket{x} + \sum_{z\neq x}  \left(\sum_y (-1)^{(x+z) \cdot y}\right) \ket{z}\right) \\
+&=\frac{1}{2^n} \ket{x}\left(2^n \ket{x} + \sum _{z\neq x} 0\cdot\ket{z}\right) \\
+&=\ket{x, x}\end{align*}
+$$
+
+
+Therefore:
+- The state obtained by Bob will be <span class='hi'>$\ket{x}$</span>.
+- This implies that the IP protocol can be used to communicate <span class='hi'>$m=n$</span> qubits of quantum information from Alice to Bob.
+
+
 
 
 ### Problem Set 3
@@ -132,4 +262,3 @@ for x in range(P_XY.rows):
 I0 = HX - HX_cond_Y     
 list(map(float, (HX, HX_cond_Y, I0))) # => [2.0, 1.584962500721156, 0.4150374992788438]
 ```
-
