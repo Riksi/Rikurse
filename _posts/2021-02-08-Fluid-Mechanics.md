@@ -2,7 +2,7 @@
 layout: post
 title:  "Fluid Mechanics Key Equations [In progress]"
 date:   2021-02-08 12:01:20 +0000
-categories: paper
+categories: engg
 ---
 $$\newcommand{\evec}[1]{\mathbf{e}_{#1}}$$
 

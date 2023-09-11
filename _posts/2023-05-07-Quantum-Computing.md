@@ -11,6 +11,14 @@ $$\newcommand{\ket}[1]{\left\lvert #1 \right \rangle}$$
     .hi{
         background-color: #00ff00ab;
     }
+
+    .hi-row{
+        margin-left: 25%;
+    }
+
+    h4{
+        font-weight: bold;
+    }
 </style>
 
 
@@ -18,6 +26,46 @@ $$\newcommand{\ket}[1]{\left\lvert #1 \right \rangle}$$
 
 * This will become a table of contents (this text will be scrapped).
 {:toc}
+
+## MIT 8.370.2x: Quantum Information Science I, Part 2
+### Problem Set 2
+
+Let $U\lvert{x}\rangle \lvert {y}\rangle  = \lvert{x}\rangle \lvert{y\oplus f(x)}\rangle$.
+
+For f such that $f(x) =  \lvert 0, x_1, \ldots x_n \rangle$, the state in A before measurement is  
+
+$$(H_2 \times I_2) U (H_2 \times I_2)\lvert 00 \rangle \lvert 00 \rangle
+\\=(H_2 \times I_2)U\left(\sum_{x_0=0}^1\sum_{x_1=0}^1 \lvert x_0,x_1 \rangle \lvert 00 \rangle/2\right)
+\\=(H_2 \times I_2)\left(\sum_{x_0=0}^1\sum_{x_1=0}^1 \lvert x_0,x_1 \rangle \lvert 00 \oplus f(x)\rangle/2 \right)
+\\=(H_2 \times I_2)\left(\sum_{x_0=0}^1\sum_{x_1=0}^1 \lvert x_0,x_1 \rangle \lvert f(x)\rangle/2 \right)
+\\=(H_2 \times I_2)\left(\sum_{x_0=0}^1\sum_{x_1=0}^1 \lvert x_0,x_1 \rangle \lvert 0,x_1\rangle/2 \right)
+\\=\sum_{x_0=0}^1\sum_{x_1=0}^1 H_2\lvert x_0,x_1 \rangle \lvert 0,x_1\rangle/2 $$
+
+- If the state in B is measured to be 00, then the state in A before measurement would be proportional to
+
+$$H_2\left(\lvert 00 \rangle + \lvert 10 \rangle\right) = \lvert ++ \rangle + \lvert -+ \rangle \propto \left(\lvert 00 \rangle + \lvert 01 \rangle\right)$$
+
+Normalising gives
+
+<span class='hi hi-row' markdown=1>$$\left(\lvert 00 \rangle + \lvert 01 \rangle\right)/\sqrt{2}$$</span>
+
+which means the two possible measurement results for A are 
+
+<span class='hi hi-row' markdown=1>$$z_1 = \lvert 00 \rangle$$</span>
+
+<span class='hi hi-row' markdown=1>$$z_1= \lvert 01 \rangle$$</span>
+
+The result obtained by solving $z_1 \cdot s = 0$ for $z \neq 00$ gives
+
+$$z_1 \cdot s = 0 
+\\ \implies 01 \cdot s = 0 \\ = 0\cdot s_0 \oplus 1\cdot s_1 = 0
+\\ = s_1 = 0$$
+
+whilst $s_0$ can be either 0 or 1. Excluding the trivial solution 
+
+<span class='hi hi-row' markdown=1>$$s = 10$$</span>
+
+Since $f(s) = f(10) = 00 = f(00)$, the true value of $s$ is <span class='hi' markdown=1>$10$</span>.
 
 ## MIT 8.371.2x: Quantum Information Science II, Part 2 - Efficient Quantum Computing - fault tolerance and complexity
 ### Problem Set 1
@@ -87,8 +135,8 @@ First let us show that for all $B$-bit strings there are exactly half that have 
 
 - Define
 
-    $$S_{B, \text{odd}} = \{s:s \in \{0,1\}^{B}, N_1(s)\text{odd}\} \\
-    S_{B, \text{even}} = \{s:s \in \{0,1\}^{B}, N_1(s)\text{even}\}$$
+    $$S_{B, \text{odd}} = \{s:s \in \{0,1\}^{B}, N_1(s)\ \text{odd}\} \\
+    S_{B, \text{even}} = \{s:s \in \{0,1\}^{B}, N_1(s)\ \text{even}\}$$
 
 - By definition
 
@@ -104,13 +152,13 @@ The proof is by induction.
 
 **Base case, $P(1)$**
 - $\\{0,1\\}^B = \\{0,1\\}$ so that $S_{B, \text{odd}} = \\{1\\}$ and $S_{B, \text{even}} = \\{0\\}$
-- Both have exactly $2^{1-1} = 1$ elements so $P(1)$ holds
+- Both have exactly $2^{B-1} = 2^{1-1} = 2^0 = 1$ element so $P(1)$ holds
 
 **Induction, $P(B)$**
 - Assume $P(B-1)$ holds
-- Note that string $a' \in \\{0,1\\}^B$ can be written as $a'_0a$ where $a \in \\{0,1\\}^{B-1}$
+- Note that string $a' \in \\{0,1\\}^B$ can be written as $a'_0\Vert a$ where $a \in \\{0,1\\}^{B-1}$ and $\Vert$ denotes concatenation.
 - Then $N_1(a') = a'_0 + N_1(a)$
-- In particular if $N_1(a) = a'0$ then $N_1(a)$ is even otherwise $N_1(a)$ is odd
+- In particular if $N_1(a) = 0\Vert a$ then $N_1(a)$ is even otherwise $N_1(a)$ is odd
 - By the induction hypothesis we assume that 
     
 $$\left\vert S_{B-1, \text{odd}}\right\vert = \left\vert S_{B-1, \text{even}}\right\vert = 2^{B-2}$$
@@ -118,7 +166,7 @@ $$\left\vert S_{B-1, \text{odd}}\right\vert = \left\vert S_{B-1, \text{even}}\ri
 - Then the number of strings with an odd number of 1's is 
     
 $$\begin{align*}
-\left\vert S_{B, \text{odd}}\right\vert &= \left\vert\{s'=s_0s:s_0=0, s\in S_{B-1, \text{odd}}\}\right\vert + \left\vert\{s'=s_0s:s_0=1, s\in S_{B-1, \text{even}}\}\right\vert \\
+\left\vert S_{B, \text{odd}}\right\vert &= \left\vert\{s'=0\Vert s:s\in S_{B-1, \text{odd}}\}\right\vert + \left\vert\{s'=1\Vert s:s\in S_{B-1, \text{even}}\}\right\vert \\
 &= \left\vert S_{B-1, \text{odd}}\right\vert + \left\vert S_{B-1, \text{even}}\right\vert \\
 &= 2^{B-2} + 2^{B-2} \\
 &= 2^{B-1}
