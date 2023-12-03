@@ -48,3 +48,7 @@ Here are some of the key partial results with regard to the Euler and Navier-Sto
 ## Numerical simulations
 
 Many numerical simulations seem to blowup for solutions to Euler equations but they are extremely numerically unstable so it is difficult to come to reliable conclusions. 
+
+## References
+- [Clay Mathematics institute Problem Introduction](https://www.claymath.org/millennium/navier-stokes-equation)
+- [Official Problem Description by Charles L. Fefferman](https://www.claymath.org/wp-content/uploads/2022/06/navierstokes.pdf)

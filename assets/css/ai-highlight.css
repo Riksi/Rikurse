@@ -18,3 +18,35 @@ button:hover{
 .chatgpt-active{
     background-color:#ffff0096;
 }
+
+.chatgpt-active.ann{
+    display: initial;
+    background-color: transparent;
+    color: #2a7ae2;
+    font-style: italic;
+}
+
+.chatgpt-active.ann-cell{
+    display: table-cell;
+}
+
+.ann-cell{
+    background-color: #2a7ae219;
+    color: #2a7ae2;
+}
+
+#btn-text{
+    display: none;
+}
+
+.tar {
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-decoration-color: #2a7ae2;
+    cursor: pointer;
+}
+
+
+.ann{
+    display: none;
+}
