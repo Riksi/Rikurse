@@ -3,7 +3,11 @@ window.onload = function(){
     // Also add '.ann' to the list of selectors
     let annSpans = Array.from(document.querySelectorAll('.ann'))
     let targetSpans = Array.from(document.querySelectorAll('.tar'));
+
+    
     chatgptSpans = chatgptSpans.concat(annSpans)
+
+    if (chatgptSpans.length == 0) return;
 
     // look for '#btn-text' span in document and if present use stripped innerText as btnText else default
     let btnText = 'AI-Assisted'; // Default text
