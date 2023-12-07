@@ -9,6 +9,15 @@ categories: engg
 * This will become a table of contents (this text will be scrapped).
 {:toc}
 
+This is part 2 of a series of posts on the Navier Stokes Millennium Prize Problem in which I endeavour to express the problem statement in my own words (IMOW) with some help from ChatGPT.
+
+Here is the list of all the posts in this series:
+
+- [IMOW: The Navier Stokes Millennium Prize Problem - Statement]({% post_url 2023-08-14-Fluids %})
+- [IMOW: The Navier Stokes Millennium Prize Problem - Main Partial Results](this post)
+- [IMOW: The Navier Stokes Millennium Prize Problem - Weak Solutions]({% post_url 2023-12-07-Fluids-Weak-Solutions %})
+
+
 ## Introduction
 
 Here are some of the key partial results with regard to the Euler and Navier-Stokes equations. The problem statement is described in detail in this [blogpost]({% post_url 2023-08-14-Fluids %}).
