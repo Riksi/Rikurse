@@ -18,7 +18,7 @@ Here is the list of all the posts in this series:
 
 - [IMOW: The Navier Stokes Millennium Prize Problem - Statement]({% post_url 2023-08-14-Fluids %})
 - [IMOW: The Navier Stokes Millennium Prize Problem - Main Partial Results]({% post_url 2023-09-07-Fluids-Finite %})
-- [IMOW: The Navier Stokes Millennium Prize Problem - Weak Solutions](this post)
+- IMOW: The Navier Stokes Millennium Prize Problem - Weak Solutions (this post)
 
 
 ## Introduction

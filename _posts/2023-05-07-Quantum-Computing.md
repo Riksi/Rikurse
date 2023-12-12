@@ -29,6 +29,7 @@ $$\newcommand{\ket}[1]{\left\lvert #1 \right \rangle}$$
 
 ## MIT 8.370.2x: Quantum Information Science I, Part 2
 ### Problem Set 2
+#### Simon's algorithm (2 of 2) / Simon's algorithm II
 
 Let $U\lvert{x}\rangle \lvert {y}\rangle  = \lvert{x}\rangle \lvert{y\oplus f(x)}\rangle$.
 
@@ -200,7 +201,8 @@ a \cdot y &= \sum_i a_i \cdot y_i \\
 \end{align*} 
 $$
 
-This is a sum over $\vert S_1\vert$-bit sub-string of $y$.  Since $y$ ranges over all $2^{n-1}$ bit strings, for each possible such substring $s$ there will be an equal number of strings $y$ where this substring equals $s$. Since there are $2^{\vert S_1 \vert}$ possible such substrings, there will be $2^{n-\vert S_1 \vert}$ strings $y$ such that
+
+The dot product above is a sum over an $\vert S_1\vert$-bit substring of $y$.  Since $y$ ranges over all $2^{n-1}$ bit strings, for each possible such substring $s$ there will be an equal number of strings $y$ where this substring equals $s$. Since there are $2^{\vert S_1 \vert}$ possible such substrings, there will be $2^{n-\vert S_1 \vert}$ strings $y$ such that
 
 $$y_{i_0}, y_{i_1}, \dots, y_{i_{\vert S_1\vert-1}} = s_0, s_1, \ldots, s_{\vert S_1\vert-1}$$  
 
@@ -310,3 +312,74 @@ for x in range(P_XY.rows):
 I0 = HX - HX_cond_Y     
 list(map(float, (HX, HX_cond_Y, I0))) # => [2.0, 1.584962500721156, 0.4150374992788438]
 ```
+
+#### Dihedral HSP and QFT
+
+The part of the question where there seems to be an error is where it states
+
+> Recall that the algorithm in lecture applied  $F_{\mathbb{Z}_N}$ , measured, and upon obtaining outcome $k$, yielded the state  $\vert{\psi _ k}\rangle  = (\vert{0}\rangle  + e^{2\pi iky}\vert {1}\rangle )/\sqrt{2}$.
+>
+> There is a procedure that will transform  $\vert \varphi_j\rangle$  into  $\vert \psi_k\rangle$ for some distribution over $k$ that depends on  $j$. If we start with a known value of $j$ then this yields a known value of $k$.
+
+These are the questions that follow (with answers highlighted):
+
+What is the procedure?
+
+- <span class='hi'> Measure the first qubit.</span>
+- Measure the second qubit.
+- CNOT from first to second qubit, then measure second qubit.
+- CNOT from second to first qubit, then measure first qubit.
+- Something else.
+
+To know $k$ do we need the outcome of the measurement?
+- <span class='hi' >Yes</span>
+- No
+
+What value of $k$ do we obtain? If there are more than one possibility then write any one of them. 
+
+<span class='hi hi-row' markdown=1>$j$</span>
+
+
+However for these answers to be correct it must be that
+
+$$\vert{\psi _ k}\rangle  = (\vert{0}\rangle  + e^{\frac{2\pi iky}{N}}\vert{1}\rangle )/\sqrt{2}$$
+
+and not
+
+$$\vert{\psi _ k}\rangle  = (\vert{0}\rangle  + e^{2\pi iky}\vert {1}\rangle )/\sqrt{2}$$
+
+i.e. the phase of the second term is $2\pi iky/N$ and not $2\pi iky$.
+
+To see this let us look at the results of the measurements.
+
+We have that 
+
+$$\begin{align*}
+\vert \varphi_j \rangle &= \frac{1}{2}\left(
+e^{\frac{2\pi i j x}{N}} \vert 00 \rangle
++ e^{-\frac{2\pi i j x}{N}} \vert 11 \rangle
++ e^{\frac{2\pi i j (x + y)}{N}} \vert 01 \rangle
++ e^{-\frac{2\pi i j (x + y)}{N}} \vert 10 \rangle
+\right)
+\\&= \frac{1}{2}\left(
+e^{\frac{2\pi i j x}{N}} \vert 0 \rangle
+ \left(\vert 0 \rangle
++ e^{\frac{2\pi i j y}{N}} \vert 1\rangle \right)
++ e^{\frac{-2\pi i j (x + y)}{N}} \vert 1 \rangle
+ \left(\vert 0 \rangle
++ e^{\frac{2\pi i j y}{N}} \vert 1\rangle \right)
+\right)
+\\&=\frac{1}{\sqrt{2}}\left(
+e^{\frac{2\pi i j x}{N}} \vert 0 \rangle
++ e^{\frac{-2\pi i j (x + y)}{N}} \vert 1\rangle
+\right)
+ \frac{1}{\sqrt{2}}\left(\vert 0 \rangle
++ e^{\frac{2\pi i j y}{N}} \vert 1\rangle \right)
+\end{align*}$$
+
+which means that whether we measure $\vert 0 \rangle$ or $\vert 1 \rangle$ for the first qubit, we always get the following state for the second qubit
+
+$$\frac{1}{\sqrt{2}}\left(\vert 0 \rangle
++ e^{\frac{2\pi i j y}{N}} \vert 1\rangle \right)$$
+
+where the phase is $2\pi i j y/N$ and not $2\pi i j y$ (with $j$ the value of $k$).
