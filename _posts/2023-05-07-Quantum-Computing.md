@@ -245,7 +245,7 @@ Therefore:
 
 Alice's states $\vert X_1\rangle, \vert X_2\rangle, \dots, \vert X_n\rangle$ are the vertices of a tetrahedron in the Bloch sphere representation. Since $\vert\phi_1\rangle = \vert 1\rangle$, choosing Bob's other states to be points of an inverted tetrahedron leads to the desired value of $I_0$.
 
-We can obtain these states by rotating the vectors corresponding to each state by $pi$ which is equivalent to an orthogonal state.
+We can obtain these states by rotating the vectors corresponding to each state by $\pi$ which is equivalent to an orthogonal state.
 
 ```python
 Y1 = s1_sy
@@ -253,6 +253,25 @@ Y2 = sy.Matrix([[-X2[1].conjugate(), X2[0]]]).T
 Y3 = sy.Matrix([[-X3[1].conjugate(), X3[0]]]).T
 Y4 = sy.Matrix([[-X4[1].conjugate(), X4[0]]]).T
 ```
+
+Since Alice states are
+
+$$\begin{align*}
+\vert X_1 \rangle &= \vert 0 \rangle \\
+\vert X_2 \rangle &= \sqrt{\frac{1}{3}}\left[\vert 0 \rangle - \sqrt{2} \vert 1 \rangle\right] \\
+\vert X_3 \rangle &= \sqrt{\frac{1}{3}}\left[\vert 0 \rangle - \sqrt{2} e^{\frac{2\pi i}{3}} \vert 1 \rangle\right] \\
+\vert X_4 \rangle &= \sqrt{\frac{1}{3}}\left[\vert 0 \rangle - \sqrt{2} e^{\frac{4\pi i}{3}} \vert 1 \rangle\right] \\
+\end{align*}$$
+
+Bob's states are
+
+$$\begin{align*}
+\vert Y_1 \rangle &= \vert 1 \rangle \\
+\vert Y_2 \rangle &= \sqrt{\frac{1}{3}}\left[\sqrt{2} \vert 0 \rangle + \vert 1 \rangle\right] \\
+\vert Y_3 \rangle &= \sqrt{\frac{1}{3}}\left[\sqrt{2} e^{-\frac{2\pi i}{3}} \vert 0 \rangle + \vert 1 \rangle\right] \\
+\vert Y_4 \rangle &= \sqrt{\frac{1}{3}}\left[\sqrt{2} e^{-\frac{4\pi i}{3}} \vert 0 \rangle + \vert 1 \rangle\right] \\
+\end{align*}$$
+
 
 Note that to calculate $I_0 = I(X;Y)$ we do as follows:
 
