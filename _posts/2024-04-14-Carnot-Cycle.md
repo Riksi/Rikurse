@@ -120,8 +120,8 @@ Some quanities for a cycle
 ```python
 cv = 718
 R = 287
-TH = 500
-TC = 400
+TH = 600
+TC = 500
 V1 = 0.01
 V2 = 0.02
 P1 = 1e6
@@ -141,7 +141,7 @@ print(f'm = {m}')
 print(f'P2 = {P2}')
 ```
 
-    m = 0.06968641114982578
+    m = 0.05807200929152149
     P2 = 500000.0
 
 
@@ -152,7 +152,7 @@ The P-V and S-T plots
 V = np.linspace(V1, V2, 101)
 P = m*R*T1 / V
 assert np.isclose(P[-1], P2)
-fig12, (ax1, ax2) = plt.subplots(1, 2, figsize=(16, 4))
+fig12, (ax1, ax2) = plt.subplots(1, 2, figsize=(16, 8))
 ax1.plot(V, P)
 line_clr = ax1.lines[0].get_color()
 ax1.plot(V1, P1, marker='o', color='red')
@@ -162,6 +162,7 @@ ax1.set_ylabel('P')
 ax1.set_title('P-V diagram')
 ax1.text(V1-3e-4, P1, '1')
 ax1.text(V2 + 2e-4, P2, '2')
+
 
 S1 = 1 # Some arbitrary value 
 S2 = S1 + m*R*np.log(V2/V1)
@@ -238,8 +239,8 @@ assert np.isclose(P3, c23/V3**gamma)
 ```
 
     gamma = 1.3997214484679665
-    V3 = 0.03495214721890084
-    P3 = 228884.36438245184
+    V3 = 0.03155884186189179
+    P3 = 264057.00721850863
     c23 = 2093.5592141183565
 
 
@@ -261,10 +262,9 @@ S3 = S2
 ax2.plot(np.ones(101)*S2, np.linspace(T2, T3, 101), color=line_clr, zorder=-1)
 ax2.plot(S3, T3, marker='o', color='gold');
 
-
 ax2.set_xticks([S1, S2]);
 ax2.set_xticklabels(['S1', 'S2=S3']);
-ax2.text(S3, T3 - 5, '3')
+ax2.text(S3, T3 - 3, '3')
 fig23.tight_layout();
 fig23
 ```
@@ -310,8 +310,8 @@ print(f'V4 = {V4}')
 print(f'P4 = {P4}')
 ```
 
-    V4 = 0.01747607360945042
-    P4 = 457768.7287649037
+    V4 = 0.015779420930945896
+    P4 = 528114.0144370173
 
 
 
@@ -331,7 +331,7 @@ ax1.text(V4 + 2e-4, P4, '4')
 S4 = S3 + m*R*np.log(V4/V3)
 ax2.plot(np.linspace(S3, S4, 101), np.ones(101)*T3, color=line_clr, zorder=-1)
 ax2.plot(S4, T4, marker='o', color='indigo');
-ax2.text(S4, T4 - 5, '4')
+ax2.text(S4, T4 - 3, '4')
 
 ax2.set_xticks([S1, S2]);
 ax2.set_xticklabels(['S1=S4', 'S2=S3']);
@@ -387,7 +387,6 @@ for line in ax1.lines + ax2.lines:
     if line.get_color() == line_clr:
         line.set_color('lightblue')
 ax1.plot(V, P, color=line_clr, zorder=-1)
-
 ax2.plot(np.ones(101)*S4, np.linspace(T4, T1, 101), color=line_clr, zorder=-1)
 
 fig41
