@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  Notes on the Carnot Cycle
-date:   2024-04-14 00:00:00 +0000
+title:  Notes on the Stirling Cycle
+date:   2024-05-02 00:00:00 +0000
 categories: engg
 ---
 <style>
@@ -19,7 +19,7 @@ window.addEventListener('load', function(){
 })
 </script>
 
-In this post I share some notes about the Carnot cycle with derivations of quantities for each process along with code to plot P-V and S-T diagrams for a numerical example.
+In this post I share some notes about the Stirling cycle with derivations of quantities for each process along with code to plot P-V and S-T diagrams for a numerical example. 
 
 <h2> Contents </h2>
 * This will become a table of contents (this text will be scrapped).
@@ -36,6 +36,7 @@ import matplotlib.pyplot as plt
 import pickle
 import io
 
+
 # A function to copy a matplotlib figure (adapted from https://stackoverflow.com/questions/45810557/copy-an-axes-content-and-show-it-in-a-new-figure)
 def copy_fig(fig):
     buf = io.BytesIO()
@@ -44,6 +45,7 @@ def copy_fig(fig):
     return pickle.load(buf) 
 ```
 
+## Equations overview
 From experimental observations of ideal gases we have the following:
 
 1. P-V-T relation: $PV = mRT$ (equation of state)
@@ -51,26 +53,22 @@ From experimental observations of ideal gases we have the following:
 3. If the gas is subject to a constant temperature expansion / compression, we observe that $Q_{12} = W_{12}$
 
 From which the following constitutive relations may be derived for energy and entropy
-- Constant volume heat transfer, from 2, $\Delta E = Q_{12} - W_{12} = Q_{12} = mc_V(T_2 - T_1)$
-- Since entropy change is path independent, we can split up any reversible process into two steps 
-    - $1-1'$: constant volume
-        - From observation 2, note that $\int_{1}^{1'} \delta Q = Q_{11'}  = mc_V(T_{1'} - T_1 = \int_{1}^{1'} mc_V dT$ 
-        - Which gives $S_{1'} - S_1 = \int_1^{1'}\frac{\delta Q}{T} = \int_1^{1'}mc_V\frac{dT}{T} = mc_V\ln\frac{T_{1'}}{T_1}$
-    - $1'-2$: constant temperature
-        - From equation of state, $PV = mRT = mRT_{1'} = mRT_2 \implies P = \frac{mRT_2}{V}$
-        - From observation 3, $Q_{1'2} = W_{1'2} = \int_{1'}^2 P dV = \int_{1'}^2 \frac{mRT_2}{V} dV = mRT_2\ln{\frac{V_2}{V_{1'}}}$
-        - Which gives $S_2 - S_{1'} = \int_{1'}^2\frac{\delta Q}{T} = \frac{1}{T_2}\int_{1'}^\delta Q =  mR\ln{\frac{V_2}{V_{1'}}}$
-- Combining the results whilst noting $T_{1'} = T_2$ and $V_{1'} = V_1$ you get
+- Constant volume heat transfer: 
 
-$$\Delta S = S_2 - S_1 = (S_2 - S_{1'}) + (S_{1'} - S_1) = mc_V\ln\frac{T_2}{T_1} + mR\ln{\frac{V_2}{V_1}}$$
-    
-    
-From the constitutive relations for entropy and the equation of state, the following P-V relation may be derived for an isentropic process ($\Delta S  = 0$):
+$$\Delta E = Q_{12} = mc_V(T_2 - T_1)$$
+
+- Entropy change for a reversible process: 
+
+$$\Delta S = mc_V\ln\frac{T_2}{T_1} + mR\ln{\frac{V_2}{V_1}}$$
+- P-V relation for isentropic process: 
 
 $$PV^{\gamma} = \text{constant} 
 \\ \gamma = \frac{c_P}{c_V} = 1 + \frac{R}{c_V}$$
 
-## Carnot cycle
+Efficiency (where $Q_C$ and $Q_H$ stand for the heat transferred out of and into the system, respectively).
+$$\eta = \frac{W_\text{net}}{Q_H} $$
+
+## Stirling cycle
 - Consists of four reversible processes
 - For each process we want to determine
     - Pressure volume (P-V) relation
@@ -87,6 +85,8 @@ $$PV^{\gamma} = \text{constant}
 ## Process $1 \rightarrow 2$
 - Isothermal: $T_2 = T_1$
 - Expansion at $T_H = T_1$
+
+Note that this is identical to [process $1\rightarrow 2$ of the Carnot cycle]({% post_url 2024-04-14-Carnot-Cycle %}#process-1-rightarrow-2)
 
 
 ### P-V relation
@@ -191,7 +191,7 @@ fig12.tight_layout();
 
 
     
-![png]({{ site.baseurl }}/assets/Carnot-Cycle/output_13_0.png)
+![png]({{ site.baseurl }}/assets/Stirling-Cycle/output_13_0.png)
     
 
 
@@ -316,39 +316,34 @@ display(process_df1.round(5))
 
 
 ## Process $2 \rightarrow 3$
-- Adiabatic (no heat transfer)
-- Expansion to $T_C = T_3 < T_2$
+- Ischoric (constant volume) 
+- Cooling to $T_C = T_3 < T_2$
 
-### 2nd law
-- Because of reversible and adiabatic nature of the process, ${S_\text{gen}}$ and $\delta Q = 0$ 
+### P-V relation
+- From equation of state, with $V_3 = V_2$
 
-$$\Delta S = \int_2^3 \frac{\delta Q}{T} = 0$$
-
-- Since process is isentropic,
-
-$$P = \frac{c}{V^{\gamma}}$$
-
-- Where $c = P_2V_2^\gamma = P_3V_3^\gamma$
+$$P_3 = mRT_3/V_3 $$
 
 ### 1st Law
-- Adibatic so $Q_{23} = 0$
+- Isochoric so $W_{23} = 0$
 
-$$\Delta E = -W_{23} = -\int_2^3 P dV = -\int_2^3\frac{c}{V^{\gamma}} = \left.-\frac{c}{1-\gamma}V^{1-\gamma}\right\vert^{V_3}_{V_2} 
-\\ = -\frac{1}{1-\gamma}\left(P_3V_3^\gamma V_3^{1-\gamma} - P_2V_2^\gamma V_2^{1-\gamma}\right) = -\frac{1}{1-\gamma}\left(P_3V_3 - P_2V_2\right) 
-\\= -\frac{mR}{\frac{R}{c_V}}\left(T_3 - T_2\right) = -mc_V\left(T_3 - T_2\right)$$
+$$\Delta E = Q_{23} = mc_V(T_3 - T_2)$$
 
-- Note that since $T_3 < T_2$, the energy change is positive
+### 2nd law
+- Since constant volume
+
+$$S - S_1 = mc_V\ln\frac{T}{T_2} \implies \Delta S = mc_V\ln\frac{T_3}{T_2}$$
 
 
 ### Summary 
-- $P = \frac{c}{V^\gamma}$
-- $\Delta E = -mc_V\left(T_3 - T_2\right)$
-- $Q_{23} = 0$
-- $W_{23} = mc_V\left(T_3 - T_2\right)$
-- $\Delta S = 0$
-    - $S_\text{trans} = 0$
+- On the $P-V$ diagram, since $V$ is constant, there is a straight vertical with $P_3 = mRT_3/V_3$ and $P_2$ at each end
+- $\Delta E = mc_V(T_3 - T_2)$
+- $Q_{23} = mc_V(T_3 - T_2)$
+- $W_{23} = 0$
+- $\Delta S = mc_V\ln\frac{T_3}{T_2}$
+    - $S_\text{trans} = mc_V\ln\frac{T_3}{T_2}$
     -  $S_\text{gen} = 0$
-- On the $S-T$ diagram, since $S$ is constant, there is a straight vertical line at $S = S_2$ between $T_3$ and $T_2$
+- $S = S_2 + mc_V\ln\frac{T}{T_2}$
 
 ### Example (continued)
 
@@ -357,25 +352,21 @@ $$\Delta E = -W_{23} = -\int_2^3 P dV = -\int_2^3\frac{c}{V^{\gamma}} = \left.-\
 T3 = TC
 gamma = 1 + R/cv
 print(f'gamma = {gamma}')
-V3 = (T2/T3)**(1/(gamma-1))*V2
+V3 = V2
 print(f'V3 = {V3}')
 P3 = m * R * T3 / V3
 print(f'P3 = {P3}')
-c23 = P2*V2**gamma
-print(f'c23 = {c23}')
-assert np.isclose(P3, c23/V3**gamma)
 ```
 
     gamma = 1.3997214484679665
-    V3 = 0.03155884186189179
-    P3 = 264057.00721850863
-    c23 = 2093.5592141183565
+    V3 = 0.02
+    P3 = 416666.6666666667
 
 
 
 ```python
-V = np.linspace(V2, V3, 101)
-P = c23 / V**gamma
+V = np.ones(101) * V2
+P = np.linspace(P2, P3, 101)
 assert np.isclose(P[-1], P3)
 fig23 = copy_fig(fig12)
 ax1, ax2 = fig23.get_axes()
@@ -385,13 +376,15 @@ for line in ax1.lines + ax2.lines:
 ax1.plot(V, P, color=line_clr, zorder=-1)
 ax1.plot(V3, P3, marker='o', color='gold');
 ax1.text(V3 + 2e-4, P3, '3')
-
-S3 = S2
-ax2.plot(np.ones(101)*S2, np.linspace(T2, T3, 101), color=line_clr, zorder=-1)
+T = np.linspace(T2, T3, 101)
+S = S2 + cv * m * np.log(T/T2) 
+S3 = S2 + cv * m * np.log(T3/T2) 
+assert np.isclose(S[-1], S3)
+ax2.plot(S, T, color=line_clr, zorder=-1)
 ax2.plot(S3, T3, marker='o', color='gold');
 
-ax2.set_xticks([S1, S2]);
-ax2.set_xticklabels(['S1', 'S2=S3']);
+ax2.set_xticks([S1, S2, S3]);
+ax2.set_xticklabels(['S1', 'S2', 'S3']);
 ax2.text(S3, T3 - 3, '3')
 fig23.tight_layout();
 fig23
@@ -401,7 +394,7 @@ fig23
 
 
     
-![png]({{ site.baseurl }}/assets/Carnot-Cycle/output_18_0.png)
+![png]({{ site.baseurl }}/assets/Stirling-Cycle/output_18_0.png)
     
 
 
@@ -418,8 +411,8 @@ state_df2 = pd.concat(
     )], axis=0
 ).reset_index(drop=True)
 
-Q23 = 0 
-W23 = m*cv*(T3 - T2)
+Q23 = m*cv*(T3 - T2) 
+W23 = 0
 dE = Q23 - W23
 dS23 = S3 - S2
 S_trans_23 = dS23
@@ -473,21 +466,21 @@ display(process_df2.round(5))
       <th>0</th>
       <td>1</td>
       <td>1000000.00000</td>
-      <td>0.01000</td>
+      <td>0.01</td>
       <td>600</td>
     </tr>
     <tr>
       <th>1</th>
       <td>2</td>
       <td>500000.00000</td>
-      <td>0.02000</td>
+      <td>0.02</td>
       <td>600</td>
     </tr>
     <tr>
       <th>2</th>
       <td>3</td>
-      <td>264057.00722</td>
-      <td>0.03156</td>
+      <td>416666.66667</td>
+      <td>0.02</td>
       <td>500</td>
     </tr>
   </tbody>
@@ -537,11 +530,11 @@ display(process_df2.round(5))
     <tr>
       <th>0</th>
       <td>2 → 3</td>
-      <td>4169.57027</td>
-      <td>0.00000</td>
+      <td>-4169.57027</td>
       <td>-4169.57027</td>
       <td>0.00000</td>
-      <td>0.00000</td>
+      <td>-7.60203</td>
+      <td>-7.60203</td>
       <td>0</td>
     </tr>
   </tbody>
@@ -554,7 +547,9 @@ display(process_df2.round(5))
 - Compression at $T_C = T_3$
 
 
-The derivations are analogous to $1 \rightarrow 2$ so we can just need to replace the process ids in the results obtained earlier
+The derivations are analogous to $1 \rightarrow 2$ so we can just need to replace the process ids in the results obtained earlier.
+
+Note also that this is too is identical to process [$3 \rightarrow 4$ of the Carnot cycle]({% post_url 2024-04-14-Carnot-Cycle %}#process-3-rightarrow-4)
 
 ### Summary
 - $P = \frac{mRT_3}{V}$
@@ -569,20 +564,20 @@ The derivations are analogous to $1 \rightarrow 2$ so we can just need to replac
 
 ### Example (continued)
 
-Note that to find $V_4$ we use the fact that the next process is isentropic
+Note that to for $V_4$ we use the fact that the next process is isochoric
 
 
 ```python
 T4 = T3
-V4 = (T1/T4)**(1/(gamma-1))*V1
+V4 = V1
 P4 = m*R*T4/V4
 
 print(f'V4 = {V4}')
 print(f'P4 = {P4}')
 ```
 
-    V4 = 0.015779420930945896
-    P4 = 528114.0144370173
+    V4 = 0.01
+    P4 = 833333.3333333334
 
 
 
@@ -597,15 +592,15 @@ for line in ax1.lines + ax2.lines:
         line.set_color('lightblue')
 ax1.plot(V, P, color=line_clr, zorder=-1)
 ax1.plot(V4, P4, marker='o', color='indigo');
-ax1.text(V4 + 2e-4, P4, '4')
+ax1.text(V4 - 3e-4, P4, '4')
 
 S4 = S3 + m*R*np.log(V4/V3)
 ax2.plot(np.linspace(S3, S4, 101), np.ones(101)*T3, color=line_clr, zorder=-1)
 ax2.plot(S4, T4, marker='o', color='indigo');
 ax2.text(S4, T4 - 3, '4')
 
-ax2.set_xticks([S1, S2]);
-ax2.set_xticklabels(['S1=S4', 'S2=S3']);
+ax2.set_xticks([S1, S2, S3, S4]);
+ax2.set_xticklabels(['S1', 'S2', 'S3', 'S4']);
 fig34.tight_layout();
 fig34
 ```
@@ -614,7 +609,7 @@ fig34
 
 
     
-![png]({{ site.baseurl }}/assets/Carnot-Cycle/output_24_0.png)
+![png]({{ site.baseurl }}/assets/Stirling-Cycle/output_24_0.png)
     
 
 
@@ -686,28 +681,28 @@ display(process_df3.round(5))
       <th>0</th>
       <td>1</td>
       <td>1000000.00000</td>
-      <td>0.01000</td>
+      <td>0.01</td>
       <td>600</td>
     </tr>
     <tr>
       <th>1</th>
       <td>2</td>
       <td>500000.00000</td>
-      <td>0.02000</td>
+      <td>0.02</td>
       <td>600</td>
     </tr>
     <tr>
       <th>2</th>
       <td>3</td>
-      <td>264057.00722</td>
-      <td>0.03156</td>
+      <td>416666.66667</td>
+      <td>0.02</td>
       <td>500</td>
     </tr>
     <tr>
       <th>3</th>
       <td>4</td>
-      <td>528114.01444</td>
-      <td>0.01578</td>
+      <td>833333.33333</td>
+      <td>0.01</td>
       <td>500</td>
     </tr>
   </tbody>
@@ -757,11 +752,11 @@ display(process_df3.round(5))
     <tr>
       <th>0</th>
       <td>2 → 3</td>
-      <td>4169.57027</td>
-      <td>0.00000</td>
+      <td>-4169.57027</td>
       <td>-4169.57027</td>
       <td>0.00000</td>
-      <td>0.00000</td>
+      <td>-7.60203</td>
+      <td>-7.60203</td>
       <td>0</td>
     </tr>
     <tr>
@@ -780,37 +775,26 @@ display(process_df3.round(5))
 
 
 ## Process $4 \rightarrow 1$
-- Isothermal
-- Compression to $T_H = T_1$
+- Isochoric
+- Heating to $T_H = T_1$
 
 
 The derivations are analogous to $2 \rightarrow 3$ so we can just need to replace the process ids in the results obtained earlier
 
-## Summary 
-- $P = \frac{c}{V^\gamma}$
-- $\Delta E = -mc_V\left(T_1 - T_4\right)$
-- $Q_{41} = 0$
-- $W_{41} = mc_V\left(T_1 - T_4\right)$
-- $\Delta S = 0$
-    - $S_\text{trans} = 0$
+### Summary 
+- On the $P-V$ diagram, since $V$ is constant, there is a straight vertical with $P_1 = mRT_1/V_1$ and $P_4$ at each end
+- $\Delta E = mc_V(T_1 - T_4)$
+- $Q_{41} = mc_V(T_1 - T_4)$
+- $W_{41} = 0$
+- $\Delta S = mc_V\ln\frac{T_4}{T_1}$
+    - $S_\text{trans} = mc_V\ln\frac{T_4}{T_1}$
     -  $S_\text{gen} = 0$
-- On the $S-T$ diagram, since $S$ is constant, there is a straight vertical line $S = S_4$ between $T_1$ and $T_4$
-
-
-
-```python
-c41 = P4*V4**gamma
-print(f'c41 = {c41}')
-assert np.isclose(P1, c41/V1**gamma)
-```
-
-    c41 = 1586.9275618720021
-
+- $S = S_4 + mc_V\ln\frac{T}{T_4}$
 
 
 ```python
-V = np.linspace(V4, V1, 101)
-P = c41/V**gamma
+V = np.ones(101) * V4
+P = np.linspace(P4, P1, 101)
 assert np.isclose(P[-1], P1)
 fig41 = copy_fig(fig34)
 ax1, ax2 = fig41.get_axes()
@@ -818,7 +802,10 @@ for line in ax1.lines + ax2.lines:
     if line.get_color() == line_clr:
         line.set_color('lightblue')
 ax1.plot(V, P, color=line_clr, zorder=-1)
-ax2.plot(np.ones(101)*S4, np.linspace(T4, T1, 101), color=line_clr, zorder=-1)
+T = np.linspace(T4, T1, 101)
+S = S4 + cv * m * np.log(T/T4) 
+assert np.isclose(S[-1], S1)
+ax2.plot(S, T, color=line_clr, zorder=-1)
 
 fig41
 ```
@@ -827,15 +814,15 @@ fig41
 
 
     
-![png]({{ site.baseurl }}/assets/Carnot-Cycle/output_28_0.png)
+![png]({{ site.baseurl }}/assets/Stirling-Cycle/output_27_0.png)
     
 
 
 
 
 ```python
-Q41 = 0 
-W41 = m*cv*(T1 - T4)
+Q41 = m*cv*(T1 - T4) 
+W41 = 0
 dE = Q41 - W41
 dS41 = S1 - S4
 S_trans_41 = dS41
@@ -889,28 +876,28 @@ display(process_df4.round(5))
       <th>0</th>
       <td>1</td>
       <td>1000000.00000</td>
-      <td>0.01000</td>
+      <td>0.01</td>
       <td>600</td>
     </tr>
     <tr>
       <th>1</th>
       <td>2</td>
       <td>500000.00000</td>
-      <td>0.02000</td>
+      <td>0.02</td>
       <td>600</td>
     </tr>
     <tr>
       <th>2</th>
       <td>3</td>
-      <td>264057.00722</td>
-      <td>0.03156</td>
+      <td>416666.66667</td>
+      <td>0.02</td>
       <td>500</td>
     </tr>
     <tr>
       <th>3</th>
       <td>4</td>
-      <td>528114.01444</td>
-      <td>0.01578</td>
+      <td>833333.33333</td>
+      <td>0.01</td>
       <td>500</td>
     </tr>
   </tbody>
@@ -960,11 +947,11 @@ display(process_df4.round(5))
     <tr>
       <th>0</th>
       <td>2 → 3</td>
-      <td>4169.57027</td>
-      <td>0.00000</td>
+      <td>-4169.57027</td>
       <td>-4169.57027</td>
       <td>0.00000</td>
-      <td>0.00000</td>
+      <td>-7.60203</td>
+      <td>-7.60203</td>
       <td>0</td>
     </tr>
     <tr>
@@ -980,11 +967,11 @@ display(process_df4.round(5))
     <tr>
       <th>0</th>
       <td>4 → 1</td>
-      <td>-4169.57027</td>
-      <td>0.00000</td>
+      <td>4169.57027</td>
       <td>4169.57027</td>
       <td>0.00000</td>
-      <td>0.00000</td>
+      <td>7.60203</td>
+      <td>7.60203</td>
       <td>0</td>
     </tr>
   </tbody>
@@ -994,22 +981,13 @@ display(process_df4.round(5))
 
 ## Efficiency
 
-Efficiency is the following ratio
-$$\eta = \frac{W_\text{net}}{Q_H} $$
-
-where $Q_C$ and $Q_H$ stand for the heat transferred at out of and into the system, respectively.
-
-For a Carnot cycle
-
 $$W_\text{net} = W_{12} + W_{23} + W_{34} + W_{41}
-\\ = mRT_1\ln{\frac{V_2}{V_1}} + mc_V\left(T_3 - T_2\right) + mRT_3\ln{\frac{V_4}{V_3}} + mc_V\left(T_1 - T_4\right)
-\\ = mRT_1\ln{\frac{V_2}{V_1}}  + mc_V\left(T_3 - T_2\right) + mRT_3\ln{\frac{V_4}{V_3}}  + mc_V\left(T_2 - T_3\right)
-\\ = mRT_1\ln{\frac{V_2}{V_1}}  + mRT_3\ln{\frac{V_4}{V_3}} $$
+\\ = mRT_1\ln{\frac{V_2}{V_1}} + 0 + mRT_3\ln{\frac{V_4}{V_3}} + 0$$
 
 Since
 
-$$V_3 = \left(\frac{T_2}{T_3}\right)^{\frac{1}{\gamma-1}}V_2$$
-$$V_4 = \left(\frac{T_1}{T_4}\right)^{\frac{1}{\gamma-1}}V_1 = \left(\frac{T_2}{T_3}\right)^{\frac{1}{\gamma-1}}V_1$$
+$$V_3 = V_2$$
+$$V_4 = V_1$$
 
 we have
 
@@ -1017,12 +995,22 @@ $$\frac{V_3}{V_4} = \frac{V_2}{V_1}$$
 
 Hence 
 
-$$W_\text{net} = mR(T_1 - T_3)\ln{\frac{V_2}{V_1}}$$
-$$Q_C = Q_{12} = W_{12} = mRT_1\ln{\frac{V_2}{V_1}}$$
+$$W_\text{net} = mR(T_1 - T_3)\ln{\frac{V_2}{V_1}} = mR(T_H - T_C)\ln{\frac{V_2}{V_1}}$$
+
+Note that we also need to include an additional term heat transfer term $Q_{41}$ which was absent in the [Carnot cycle]({% post_url 2024-04-14-Carnot-Cycle %}) since process [$4 \rightarrow 1$ of the Carnot cycle]({% post_url 2024-04-14-Carnot-Cycle %}#process-4-rightarrow-1) was adiabatic.
+
+$$Q_H = Q_{41} + Q_{12} = mc_V(T_1 - T_4) + mRT_1\ln{\frac{V_2}{V_1}} = mc_V(T_H - T_C) + mRT_H\ln{\frac{V_2}{V_1}}$$
 
 which means
 
-$$\eta = \frac{W_\text{net}}{Q_H} = 1 - \frac{T3}{T1} = 1 - \frac{T_C}{T_H}$$
+$$\eta = \frac{W_\text{net}}{Q_H} = \frac{mR(T_H - T_C)\ln{\frac{V_2}{V_1}}}{mc_V(T_H - T_C) + mRT_H\ln{\frac{V_2}{V_1}}}
+\\= \frac{1}{\frac{c_V}{R}\frac{1}{\ln{\frac{V_2}{V_1}}} + \frac{T_H}{T_H - T_C} }$$
+
+Note that since $V_2 > V_1 \implies \frac{c_V}{R}\ln{\frac{V_2}{V_1}} > 0$
+
+$$\eta_\text{Stirling} = \frac{1}{\frac{c_V}{R}\frac{1}{\ln{\frac{V_2}{V_1}}} + \frac{1}{\eta_\text{Carnot}} } = \frac{\eta_\text{Carnot}}{\eta_\text{Carnot}\frac{c_V}{R}\frac{1}{\ln{\frac{V_2}{V_1}}} + 1 } < \eta_\text{Carnot}$$
+
+This reduction in efficiency is due to the fact that heat transfer occurs with a change in temperature in contrast to the purely isothermal heat transfers found in the [Carnot cycle]({% post_url 2024-04-14-Carnot-Cycle %}).
 
 ## Summary
 
@@ -1040,7 +1028,7 @@ display(process_df4.round(5))
 
 
     
-![png]({{ site.baseurl }}/assets/Carnot-Cycle/output_34_0.png)
+![png]({{ site.baseurl }}/assets/Stirling-Cycle/output_32_0.png)
     
 
 
@@ -1074,28 +1062,28 @@ display(process_df4.round(5))
       <th>0</th>
       <td>1</td>
       <td>1000000.00000</td>
-      <td>0.01000</td>
+      <td>0.01</td>
       <td>600</td>
     </tr>
     <tr>
       <th>1</th>
       <td>2</td>
       <td>500000.00000</td>
-      <td>0.02000</td>
+      <td>0.02</td>
       <td>600</td>
     </tr>
     <tr>
       <th>2</th>
       <td>3</td>
-      <td>264057.00722</td>
-      <td>0.03156</td>
+      <td>416666.66667</td>
+      <td>0.02</td>
       <td>500</td>
     </tr>
     <tr>
       <th>3</th>
       <td>4</td>
-      <td>528114.01444</td>
-      <td>0.01578</td>
+      <td>833333.33333</td>
+      <td>0.01</td>
       <td>500</td>
     </tr>
   </tbody>
@@ -1145,11 +1133,11 @@ display(process_df4.round(5))
     <tr>
       <th>0</th>
       <td>2 → 3</td>
-      <td>4169.57027</td>
-      <td>0.00000</td>
+      <td>-4169.57027</td>
       <td>-4169.57027</td>
       <td>0.00000</td>
-      <td>0.00000</td>
+      <td>-7.60203</td>
+      <td>-7.60203</td>
       <td>0</td>
     </tr>
     <tr>
@@ -1166,10 +1154,10 @@ display(process_df4.round(5))
       <th>0</th>
       <td>4 → 1</td>
       <td>4169.57027</td>
+      <td>4169.57027</td>
       <td>0.00000</td>
-      <td>-4169.57027</td>
-      <td>0.00000</td>
-      <td>0.00000</td>
+      <td>7.60203</td>
+      <td>7.60203</td>
       <td>0</td>
     </tr>
   </tbody>
